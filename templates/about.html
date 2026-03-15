@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Soho Apparel Group</title>
+  <link rel="stylesheet" href="/css/about.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <svg class="logo-mark" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="21" cy="21" r="20" stroke="#1c1a17" stroke-width="1"/>
+        <text x="21" y="18" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="12" fill="#1c1a17" font-weight="400">S</text>
+        <text x="21" y="28" text-anchor="middle" font-family="Raleway, sans-serif" font-size="5" fill="#1c1a17" letter-spacing="1.5">APPAREL</text>
+      </svg>
+    </div>
+    <div class="navbar-links">
+      <a href="#about" class="active">About</a>
+      <a href="#">Capabilities</a>
+      <a href="#">Brands</a>
+      <a href="#">Gallery</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-sheen"></div>
+    <div class="hero-content">
+      <h1 class="brand-title">Soho Apparel Group</h1>
+      <div class="hero-nav">
+        <a href="#about">About</a>
+        <a href="#">Capabilities</a>
+        <a href="#">Brands</a>
+        <a href="#">Gallery</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="scroll-hint"><div class="scroll-hint-line"></div></div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about-page" id="about">
+
+    <div class="about-intro reveal">
+      <div>
+        <h2 class="about-intro-title">Soho<br>Apparel<br>Group</h2>
+        <p class="about-intro-desc">We are your trusted apparel manufacturing company, providing private label garments to major apparel companies.</p>
+      </div>
+      <div>
+        <div class="building-card">
+          <span class="building-badge">Soho</span>
+          <div class="play-btn">
+            <svg viewBox="0 0 16 16"><polygon points="3,1 15,8 3,15"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-rule"><hr/></div>
+
+    <div class="about-story reveal">
+      <p>Founded in 2002 in the heart of California, Soho Apparel Group began as a private label supplier for major apparel brands and has grown into a cornerstone of American fashion. From our expansive 300,000-square-foot warehouse in City of Industry, we've become one of North America's most trusted fashion brands. Within a few years, we launched our own series of brands, delivering trendsetting tops, bottoms, and activewear for Juniors, Young Contemporary, Missy, and Kids markets.</p>
+      <p>Our mission is to empower customers across the United States with high-quality, stylish apparel at competitive prices. Fueled by innovation and a passion for exceptional value, Soho Apparel Group sets the standard for excellence, ensuring shoppers nationwide look and feel their best.</p>
+      <p>At Soho Apparel Group, our mission is clear: to exceed customer expectations with top-quality products at competitive prices. Driven by a passion for innovation and unmatched style, we deliver exceptional value every day, solidifying our place as a leader in the apparel industry.</p>
+    </div>
+
+    <div class="partners-wrap reveal">
+      <div class="partners-sidebar">
+        <span class="partners-sidebar-text">Partners</span>
+      </div>
+      <div class="partners-logos">
+        <div class="p-logo p-burlington"><span>Burlington</span></div>
+        <div class="p-logo p-ross"><span>ROSS</span></div>
+        <div class="p-logo p-dds"><span>dd's DISCOUNTS</span></div>
+        <div class="p-logo p-tjmaxx"><span>TJ·Maxx</span></div>
+        <div class="p-logo p-fnova"><span>FASHION NOVA</span></div>
+        <div class="p-logo p-bealls"><span>bealls</span></div>
+        <div class="p-logo p-tillys"><span>TILLYS</span></div>
+        <div class="p-logo p-citi"><span>CITI TRENDS</span></div>
+        <div class="p-logo p-windsor"><span>Windsor</span></div>
+        <div class="p-logo p-marshalls"><span>Marshalls</span></div>
+        <div class="p-logo p-winners"><span>WINNERS</span></div>
+        <div class="p-logo p-boscovs"><span>Boscov's</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-name">Soho Apparel Group</div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#">Capabilities</a>
+      <a href="#">Brands</a>
+      <a href="#">Gallery</a>
+      <a href="#">Careers</a>
+      <a href="#">Contact</a>
+    </div>
+    <hr class="footer-rule"/>
+    <div class="footer-contact">
+      <div class="fc-item">
+        <span class="fc-label">Email:</span>
+        <span class="fc-value">info@sohoapparelgroup.com</span>
+      </div>
+      <div class="fc-item">
+        <span class="fc-label">Address:</span>
+        <span class="fc-value">15025 Proctor Ave, City of Industry, CA 91745</span>
+      </div>
+      <div class="fc-item">
+        <span class="fc-label">Phone:</span>
+        <span class="fc-value">626-279-2808</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 100);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => obs.observe(el));
+
+    document.querySelectorAll('.navbar-links a').forEach(a => {
+      a.addEventListener('click', () => {
+        document.querySelectorAll('.navbar-links a').forEach(l => l.classList.remove('active'));
+        a.classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
