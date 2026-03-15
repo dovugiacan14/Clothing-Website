@@ -22,7 +22,7 @@
     --secondary-foreground: 216 50% 16%;
 
     --muted: 210 20% 96%;
-    --muted-foreground: 216 15% 50%;
+    --muted-foreground: 216 15% 46%;
 
     --accent: 210 30% 92%;
     --accent-foreground: 216 50% 16%;
@@ -39,8 +39,7 @@
     --navy: 216 50% 16%;
     --navy-light: 216 40% 25%;
     --navy-dark: 216 60% 10%;
-    --cream: 40 30% 96%;
-    --gold: 40 60% 55%;
+    --footer-bg: 216 30% 28%;
 
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Montserrat', sans-serif;
@@ -72,24 +71,23 @@
 }
 
 @layer components {
-  .section-padding {
-    @apply px-6 py-20 md:px-16 lg:px-24 lg:py-32;
-  }
-
   .nav-link {
-    @apply text-xs tracking-[0.3em] uppercase font-medium transition-all duration-300 hover:opacity-60;
+    @apply text-xs tracking-[0.25em] uppercase font-medium transition-opacity duration-300 hover:opacity-60;
     font-family: var(--font-body);
   }
 
-  .section-title {
-    @apply text-4xl md:text-5xl lg:text-6xl font-light tracking-wide;
+  .nav-link-active {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .page-title {
+    @apply text-4xl md:text-5xl font-light tracking-wide text-center;
     font-family: var(--font-display);
   }
 
-  .section-subtitle {
-    @apply text-sm tracking-[0.2em] uppercase font-medium;
-    font-family: var(--font-body);
-    color: hsl(var(--muted-foreground));
+  .page-content {
+    @apply max-w-3xl mx-auto px-6 py-16 md:py-20;
   }
 }
 
