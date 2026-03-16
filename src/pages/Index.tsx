@@ -20,15 +20,71 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0">
-        <img
-          src={heroImage}
-          alt="Luxury fabric"
-          className={`h-full w-full object-cover transition-transform duration-[2s] ease-out ${loaded ? "scale-100" : "scale-110"}`}
+    <div className="relative h-screen w-full overflow-hidden bg-primary">
+      {/* Hero fabric with wave motion - Multiple layers */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Layer 1 - Main fabric */}
+        <div
+          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            mixBlendMode: "overlay",
+            opacity: 0.7,
+            animation: "waveMotion1 6s ease-in-out infinite",
+            transformOrigin: "center",
+          }}
         />
-        <div className="absolute inset-0 bg-primary/20" />
+
+        {/* Layer 2 - Secondary fabric with delay */}
+        <div
+          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: "105% 105%",
+            backgroundPosition: "center",
+            mixBlendMode: "overlay",
+            opacity: 0.5,
+            animation: "waveMotion2 6s ease-in-out infinite",
+            animationDelay: "0.75s",
+            transformOrigin: "center",
+          }}
+        />
+
+        {/* Layer 3 - Tertiary fabric with more delay */}
+        <div
+          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: "110% 110%",
+            backgroundPosition: "center",
+            mixBlendMode: "overlay",
+            opacity: 0.3,
+            animation: "waveMotion3 6s ease-in-out infinite",
+            animationDelay: "1.5s",
+            transformOrigin: "center",
+          }}
+        />
+
+        {/* Layer 4 - Diagonal movement from bottom-right to top-left */}
+        <div
+          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: "115% 115%",
+            backgroundPosition: "bottom right",
+            mixBlendMode: "overlay",
+            opacity: 0.25,
+            animation: "waveMotion4 6s ease-in-out infinite",
+            animationDelay: "2s",
+            transformOrigin: "bottom right",
+          }}
+        />
       </div>
+
+      {/* Gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/50" />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
         <h1
