@@ -1,3 +1,4 @@
+import { Reveal } from "@/hooks/useScrollReveal";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
@@ -13,21 +14,22 @@ const images = [
 const GalleryPage = () => {
   return (
     <div className="page-content max-w-5xl">
-      <h1 className="page-title mb-10">Gallery</h1>
+      <Reveal>
+        <h1 className="page-title mb-10">Gallery</h1>
+      </Reveal>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {images.map((img, i) => (
-          <div
-            key={i}
-            className={`overflow-hidden group ${i === 0 ? "col-span-2 row-span-2" : ""}`}
-          >
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              style={{ minHeight: i === 0 ? "100%" : "220px" }}
-            />
-          </div>
+          <Reveal key={i} delay={i * 120}>
+            <div className={`overflow-hidden group ${i === 0 ? "col-span-2 row-span-2" : ""}`}>
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                style={{ minHeight: i === 0 ? "100%" : "220px" }}
+              />
+            </div>
+          </Reveal>
         ))}
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { Reveal } from "@/hooks/useScrollReveal";
+
 const categories = [
   "INFANT", "CHILDREN", "YOUNG ADULT", "WOMEN'S", "MATERNITY", "JEANS", "LINGERIE", "SPORTS",
 ];
@@ -31,124 +33,104 @@ const bottomImages = [
 const CapabilitiesPage = () => {
   return (
     <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-      {/* Hero Section - Text left, Image right */}
+      {/* Hero Section */}
       <div className="grid md:grid-cols-2 gap-10 items-start mb-20">
-        <div>
+        <Reveal direction="left">
           <p className="text-foreground/80 font-body text-sm leading-relaxed mb-4">
             Soho Apparel Group is a leader in the fashion industry, specializing in a diverse range of apparel categories. Our extensive product offerings include infant clothing, children's wear (ages 4-6 and 7-16), young adult fashion, women's wear, business attire, sportswear, maternity wear, dresses, lingerie, and more.
           </p>
           <p className="text-foreground/80 font-body text-sm leading-relaxed">
             With 14 distinct departments and product lines, we cater to the needs of a wide and varied customer base, always focusing on delivering style, quality, and comfort.
           </p>
-        </div>
-        <div>
+        </Reveal>
+        <Reveal direction="right" delay={200}>
           <img
             src="https://static.wixstatic.com/media/25c35148f7e44d63ab6da9fce767c076.jpg/v1/fill/w_567,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/25c35148f7e44d63ab6da9fce767c076.jpg"
             alt="Fashion design workspace"
             className="w-full h-auto object-cover"
           />
-        </div>
+        </Reveal>
       </div>
 
       {/* Design capabilities text */}
-      <p className="text-foreground/80 font-body text-sm leading-relaxed mb-20 max-w-4xl mx-auto text-center">
-        Our design capabilities are powered by a talented in-house team that includes experienced fashion designers, pattern makers, tailors, and print designers, all of whom work together to ensure the latest trends and innovations are seamlessly integrated into our collections. In addition to our design expertise, we also have a dedicated team specializing in building and nurturing our brands, ensuring that each product we create tells a unique story and resonates with our target customers.
-      </p>
+      <Reveal>
+        <p className="text-foreground/80 font-body text-sm leading-relaxed mb-20 max-w-4xl mx-auto text-center">
+          Our design capabilities are powered by a talented in-house team that includes experienced fashion designers, pattern makers, tailors, and print designers, all of whom work together to ensure the latest trends and innovations are seamlessly integrated into our collections. In addition to our design expertise, we also have a dedicated team specializing in building and nurturing our brands, ensuring that each product we create tells a unique story and resonates with our target customers.
+        </p>
+      </Reveal>
 
       {/* Product Categories */}
-      <div className="mb-10">
-        <h2 className="font-display text-4xl md:text-5xl tracking-wide text-right text-foreground mb-6">
-          Product Categories
-        </h2>
-        <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10">
-          {categories.map((cat) => (
-            <span key={cat} className="font-body text-xs tracking-[0.2em] text-foreground/70 uppercase">
-              {cat}
-            </span>
-          ))}
+      <Reveal>
+        <div className="mb-10">
+          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-right text-foreground mb-6">Product Categories</h2>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10">
+            {categories.map((cat) => (
+              <span key={cat} className="font-body text-xs tracking-[0.2em] text-foreground/70 uppercase">{cat}</span>
+            ))}
+          </div>
         </div>
-      </div>
+      </Reveal>
 
       {/* Product Images Grid - Row 1 */}
-      <div className="flex flex-wrap justify-center gap-4 mb-4">
-        {productImages.map((img, i) => (
-          <img
-            key={i}
-            src={img.src}
-            alt={img.alt}
-            className="h-[280px] w-auto object-cover"
-            loading="lazy"
-          />
-        ))}
-      </div>
+      <Reveal>
+        <div className="flex flex-wrap justify-center gap-4 mb-4">
+          {productImages.map((img, i) => (
+            <img key={i} src={img.src} alt={img.alt} className="h-[280px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          ))}
+        </div>
+      </Reveal>
 
       {/* Product Images Grid - Row 2 */}
-      <div className="flex flex-wrap justify-center gap-4 mb-4">
-        {moreImages.map((img, i) => (
-          <img
-            key={i}
-            src={img.src}
-            alt={img.alt}
-            className="h-[320px] w-auto object-cover"
-            loading="lazy"
-          />
-        ))}
-      </div>
+      <Reveal>
+        <div className="flex flex-wrap justify-center gap-4 mb-4">
+          {moreImages.map((img, i) => (
+            <img key={i} src={img.src} alt={img.alt} className="h-[320px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          ))}
+        </div>
+      </Reveal>
 
       {/* Product Images Grid - Row 3 */}
-      <div className="flex flex-wrap justify-center gap-4 mb-20">
-        {bottomImages.map((img, i) => (
-          <img
-            key={i}
-            src={img.src}
-            alt={img.alt}
-            className="h-[300px] w-auto object-cover"
-            loading="lazy"
-          />
-        ))}
-      </div>
+      <Reveal>
+        <div className="flex flex-wrap justify-center gap-4 mb-20">
+          {bottomImages.map((img, i) => (
+            <img key={i} src={img.src} alt={img.alt} className="h-[300px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          ))}
+        </div>
+      </Reveal>
 
       {/* Trusted Supplier Section */}
-      <div className="mb-20">
-        <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-8">
-          Trusted Supplier
-        </h2>
-        <p className="text-foreground/80 font-body text-sm leading-relaxed mb-10 max-w-4xl">
-          Soho Apparel Group is proud to be one of the top three apparel suppliers to major U.S. retailers, including Ross, TJ Maxx, Burlington, Marshalls, and DD's Discounts. Our commitment to quality, timely delivery, and understanding consumer trends has made us a trusted partner for these renowned chains. Additionally, we are a major supplier for the prominent U.S. e-commerce platform Fashion Nova, where our sportswear lines are among the most popular and widely distributed.
-        </p>
-        <div className="grid md:grid-cols-2 gap-6">
-          <img
-            src="https://static.wixstatic.com/media/11062b_79510cda9b964ee397a8e9ca249455c9~mv2.jpg/v1/fill/w_524,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_79510cda9b964ee397a8e9ca249455c9~mv2.jpg"
-            alt="Retail store"
-            className="w-full h-auto object-cover"
-          />
-          <img
-            src="https://static.wixstatic.com/media/11062b_8ce3b16ee2c2452a83dc9793a0e80056~mv2.jpg/v1/fill/w_524,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_8ce3b16ee2c2452a83dc9793a0e80056~mv2.jpg"
-            alt="Warehouse operations"
-            className="w-full h-auto object-cover"
-          />
+      <Reveal>
+        <div className="mb-20">
+          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-8">Trusted Supplier</h2>
+          <p className="text-foreground/80 font-body text-sm leading-relaxed mb-10 max-w-4xl">
+            Soho Apparel Group is proud to be one of the top three apparel suppliers to major U.S. retailers, including Ross, TJ Maxx, Burlington, Marshalls, and DD's Discounts. Our commitment to quality, timely delivery, and understanding consumer trends has made us a trusted partner for these renowned chains. Additionally, we are a major supplier for the prominent U.S. e-commerce platform Fashion Nova, where our sportswear lines are among the most popular and widely distributed.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <img src="https://static.wixstatic.com/media/11062b_79510cda9b964ee397a8e9ca249455c9~mv2.jpg/v1/fill/w_524,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_79510cda9b964ee397a8e9ca249455c9~mv2.jpg" alt="Retail store" className="w-full h-auto object-cover" />
+            <img src="https://static.wixstatic.com/media/11062b_8ce3b16ee2c2452a83dc9793a0e80056~mv2.jpg/v1/fill/w_524,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_8ce3b16ee2c2452a83dc9793a0e80056~mv2.jpg" alt="Warehouse operations" className="w-full h-auto object-cover" />
+          </div>
         </div>
-      </div>
+      </Reveal>
 
       {/* Warehouse Section */}
-      <div className="mb-20">
-        <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">
-          Warehouse
-        </h2>
-        <p className="text-foreground/80 font-body text-sm leading-relaxed max-w-4xl">
-          To support our large-scale operations, Soho Apparel Group manages a state-of-the-art 300,000-square-foot warehouse, equipped to handle high-volume inventory with efficiency and precision. This facility allows us to maintain excellent logistics and ensures that our products reach our retail partners and customers quickly and reliably.
-        </p>
-      </div>
+      <Reveal>
+        <div className="mb-20">
+          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">Warehouse</h2>
+          <p className="text-foreground/80 font-body text-sm leading-relaxed max-w-4xl">
+            To support our large-scale operations, Soho Apparel Group manages a state-of-the-art 300,000-square-foot warehouse, equipped to handle high-volume inventory with efficiency and precision. This facility allows us to maintain excellent logistics and ensures that our products reach our retail partners and customers quickly and reliably.
+          </p>
+        </div>
+      </Reveal>
 
       {/* Commitment Section */}
-      <div>
-        <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">
-          Commitment
-        </h2>
-        <p className="text-foreground/80 font-body text-sm leading-relaxed max-w-4xl">
-          With a commitment to innovation, customer satisfaction, and excellence in every aspect of our business, Soho Apparel Group continues to drive the future of fashion. Whether it's through our cutting-edge designs or our seamless supply chain, we strive to set the standard in the global apparel market.
-        </p>
-      </div>
+      <Reveal>
+        <div>
+          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">Commitment</h2>
+          <p className="text-foreground/80 font-body text-sm leading-relaxed max-w-4xl">
+            With a commitment to innovation, customer satisfaction, and excellence in every aspect of our business, Soho Apparel Group continues to drive the future of fashion. Whether it's through our cutting-edge designs or our seamless supply chain, we strive to set the standard in the global apparel market.
+          </p>
+        </div>
+      </Reveal>
     </div>
   );
 };
