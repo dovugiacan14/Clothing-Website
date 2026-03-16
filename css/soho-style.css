@@ -1,0 +1,337 @@
+/* SOHO Minimal Style */
+:root {
+    --primary-dark: #1a1a1a;
+    --secondary-dark: #333333;
+    --light-beige: #f5f0e8;
+    --medium-beige: #e8e0d5;
+    --text-gray: #666666;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--primary-dark);
+    background-color: var(--light-beige);
+}
+
+/* Navbar Styles */
+.soho-navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 25px 0;
+    transition: all 0.3s ease;
+}
+
+.soho-navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 15px 0;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+}
+
+.soho-brand {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary-dark);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.soho-nav-link {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    padding: 10px 20px !important;
+    transition: color 0.3s ease;
+}
+
+.soho-nav-link:hover,
+.soho-nav-link.active {
+    color: var(--text-gray);
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* Hero Section */
+.soho-hero {
+    height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1558171813-4c088753af8f?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.soho-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 240, 232, 0.3);
+}
+
+.soho-hero-logo {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.soho-hero-logo h1 {
+    font-size: 72px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.soho-hero-logo p {
+    font-size: 14px;
+    letter-spacing: 4px;
+    color: var(--text-gray);
+    text-transform: uppercase;
+}
+
+/* About Section */
+.soho-section {
+    padding: 120px 0;
+}
+
+.soho-section-title {
+    font-size: 36px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: var(--primary-dark);
+}
+
+.soho-text {
+    font-size: 16px;
+    line-height: 2;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.soho-divider {
+    width: 60px;
+    height: 1px;
+    background-color: var(--primary-dark);
+    margin: 40px 0;
+}
+
+/* Stats Section */
+.soho-stats {
+    background-color: var(--medium-beige);
+    padding: 80px 0;
+}
+
+.soho-stat-item {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.soho-stat-number {
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--primary-dark);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.soho-stat-label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-gray);
+}
+
+/* Brands Section */
+.soho-brand-card {
+    background-color: white;
+    padding: 60px 40px;
+    text-align: center;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.soho-brand-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+.soho-brand-logo {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.soho-brand-origin {
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: var(--text-gray);
+    text-transform: uppercase;
+}
+
+/* CTA Section */
+.soho-cta {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.soho-cta-title {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.soho-cta-text {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 40px;
+}
+
+.soho-btn {
+    display: inline-block;
+    padding: 18px 50px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.soho-btn:hover {
+    background-color: white;
+    color: var(--primary-dark);
+}
+
+/* Footer */
+.soho-footer {
+    background-color: var(--primary-dark);
+    color: white;
+    padding: 80px 0 40px;
+}
+
+.soho-footer-logo {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.soho-footer-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.8;
+}
+
+.soho-footer-title {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.soho-footer-link {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.soho-footer-link:hover {
+    color: white;
+}
+
+.soho-footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 60px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.soho-copyright {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .soho-navbar {
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    .soho-hero-logo h1 {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .soho-hero-logo p {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .soho-section-title {
+        font-size: 28px;
+    }
+
+    .soho-stat-number {
+        font-size: 48px;
+    }
+
+    .soho-cta-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767px) {
+    .soho-hero-logo h1 {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+
+    .soho-section {
+        padding: 80px 0;
+    }
+
+    .soho-stat-item {
+        padding: 30px 15px;
+    }
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
