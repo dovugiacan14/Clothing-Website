@@ -1,66 +1,974 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soho Apparel Group | Fashion Wholesaler in Southern California</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="../css/main.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soho Apparel Group | Fashion Wholesaler</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --clr-bg: #002B4C;
+      --clr-surface: #003866;
+      --clr-accent: #00A3B5;
+      --clr-accent-light: #00D4E8;
+      --clr-white: #FFFFFF;
+      --clr-muted: #B0BEC5;
+      --clr-border: rgba(0,163,181,0.18);
+      --ff-display: 'Cormorant Garamond', serif;
+      --ff-body: 'Jost', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--clr-bg);
+      color: var(--clr-white);
+      font-family: var(--ff-body);
+      font-weight: 400;
+      overflow-x: hidden;
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--clr-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--clr-gold); border-radius: 2px; }
+
+    /* ─── NAVBAR ─── */
+    #mainNav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1.5rem 2.5rem;
+      transition: background 0.5s ease, padding 0.4s ease, backdrop-filter 0.5s ease;
+    }
+    #mainNav.scrolled {
+      background: rgba(0,43,76,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 1rem 2.5rem;
+      border-bottom: 1px solid var(--clr-border);
+    }
+
+    .nav-brand img {
+      height: 54px;
+      width: auto;
+      transition: height 0.4s ease;
+      filter: brightness(0) invert(1);
+    }
+    #mainNav.scrolled .nav-brand img { height: 42px; }
+
+    /* Fallback text logo */
+    .nav-brand .brand-text {
+      font-family: var(--ff-display);
+      font-weight: 600;
+      font-size: 1.35rem;
+      letter-spacing: 0.18em;
+      color: var(--clr-accent-light);
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.4rem;
+      list-style: none;
+      margin: 0; padding: 0;
+    }
+    .nav-links a {
+      font-family: var(--ff-body);
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      text-decoration: none;
+      position: relative;
+      padding-bottom: 4px;
+      opacity: 1;
+      transition: opacity 0.3s, color 0.3s;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--clr-accent);
+      transition: width 0.35s ease;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--clr-accent-light); }
+    .nav-links a:hover::after { width: 100%; }
+
+    /* Hamburger */
+    .nav-toggler {
+      background: none;
+      border: none;
+      color: var(--clr-white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Mobile menu */
+    #mobileMenu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--clr-bg);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    #mobileMenu.open { display: flex; }
+    #mobileMenu a {
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 300;
+      letter-spacing: 0.1em;
+      color: var(--clr-white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    #mobileMenu a:hover { color: var(--clr-accent); }
+    #mobileMenu .close-btn {
+      position: absolute;
+      top: 1.8rem; right: 2.2rem;
+      background: none; border: none;
+      color: var(--clr-muted);
+      font-size: 1.8rem;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    #mobileMenu .close-btn:hover { color: var(--clr-accent); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(160deg, rgba(0,43,76,0.55) 0%, rgba(0,43,76,0.3) 50%, rgba(0,43,76,0.72) 100%),
+        url('https://static.wixstatic.com/media/11062b_0772d30e39b5493b94d82172abf46cc6f000.jpg/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/11062b_0772d30e39b5493b94d82172abf46cc6f000.jpg') center/cover no-repeat;
+      transform: scale(1.06);
+      animation: heroZoom 18s ease-out forwards;
+    }
+    @keyframes heroZoom {
+      from { transform: scale(1.06); }
+      to   { transform: scale(1.00); }
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 0 1.5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--ff-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.42em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.5s ease forwards;
+    }
+
+    .hero-title {
+      font-family: var(--ff-display);
+      font-size: clamp(3.2rem, 9vw, 8rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: 0.06em;
+      color: var(--clr-white);
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 1s 0.75s ease forwards;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--clr-accent-light);
+    }
+
+    .hero-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--clr-accent);
+      margin: 0 auto 1.8rem;
+      opacity: 0;
+      animation: fadeIn 0.8s 1.2s ease forwards;
+    }
+
+    .hero-sub {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2.8rem;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.0s ease forwards;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: var(--ff-body);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--clr-bg);
+      background: var(--clr-accent);
+      padding: 0.85rem 2.6rem;
+      text-decoration: none;
+      border: 1px solid var(--clr-accent);
+      transition: background 0.35s, color 0.35s;
+      opacity: 0;
+      animation: fadeUp 0.9s 1.3s ease forwards;
+    }
+    .hero-cta:hover {
+      background: transparent;
+      color: var(--clr-accent);
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      animation: fadeIn 1s 1.8s ease forwards;
+    }
+    .hero-scroll span {
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--clr-muted);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--clr-accent), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; transform: scaleY(1); }
+      50% { opacity: 1; transform: scaleY(1.2); }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 0; }
+
+    .section-label {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.38em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4.5vw, 3.4rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--clr-white);
+      margin-bottom: 1.4rem;
+    }
+    .section-title em { font-style: italic; color: var(--clr-accent-light); }
+    .section-body {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--clr-white);
+      max-width: 520px;
+    }
+    .gold-rule {
+      width: 44px;
+      height: 1px;
+      background: var(--clr-accent);
+      margin-bottom: 2rem;
+    }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--clr-surface); }
+
+    .about-img-wrap {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+    .about-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(20%);
+      transition: transform 0.9s ease, filter 0.5s;
+    }
+    .about-img-wrap:hover img { transform: scale(1.04); filter: grayscale(0%); }
+    .about-img-badge {
+      position: absolute;
+      bottom: -1px; right: -1px;
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 1.2rem 1.6rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+    .about-img-badge small {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-top: 0.2rem;
+    }
+
+    /* ─── CAPABILITIES ─── */
+    #capabilities { background: var(--clr-bg); }
+
+    .cap-card {
+      border: 1px solid var(--clr-border);
+      padding: 2.4rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s, transform 0.4s;
+      height: 100%;
+    }
+    .cap-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 2px; height: 0;
+      background: var(--clr-accent);
+      transition: height 0.5s ease;
+    }
+    .cap-card:hover { border-color: rgba(0,163,181,0.45); transform: translateY(-4px); }
+    .cap-card:hover::before { height: 100%; }
+
+    .cap-num {
+      font-family: var(--ff-display);
+      font-size: 3rem;
+      font-weight: 300;
+      color: rgba(0,163,181,0.15);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .cap-title {
+      font-family: var(--ff-body);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      margin-bottom: 0.8rem;
+    }
+    .cap-desc {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: var(--clr-white);
+      font-weight: 400;
+    }
+
+    /* ─── BRANDS ─── */
+    #brands { background: var(--clr-surface); }
+
+    .brand-marquee-track {
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    }
+    .brand-marquee-inner {
+      display: flex;
+      gap: 3rem;
+      width: max-content;
+      animation: marquee 22s linear infinite;
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .brand-pill {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      padding: 0.7rem 2rem;
+      border: 1px solid var(--clr-border);
+      white-space: nowrap;
+      transition: color 0.3s, border-color 0.3s;
+      cursor: default;
+    }
+    .brand-pill:hover { color: var(--clr-accent-light); border-color: var(--clr-accent); }
+
+    /* ─── GALLERY ─── */
+    #gallery { background: var(--clr-bg); }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
+      gap: 10px;
+    }
+    .g-item { overflow: hidden; position: relative; }
+    .g-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.7s ease, filter 0.5s;
+      filter: grayscale(25%);
+    }
+    .g-item:hover img { transform: scale(1.07); filter: grayscale(0%); }
+    .g-item:nth-child(1) { grid-column: span 7; grid-row: span 2; aspect-ratio: 4/3; }
+    .g-item:nth-child(2) { grid-column: span 5; aspect-ratio: 5/4; }
+    .g-item:nth-child(3) { grid-column: span 5; aspect-ratio: 5/4; }
+    .g-item:nth-child(4) { grid-column: span 4; aspect-ratio: 1; }
+    .g-item:nth-child(5) { grid-column: span 8; aspect-ratio: 16/7; }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--clr-surface); }
+
+    .contact-line {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .contact-line:last-child { border-bottom: none; }
+    .contact-icon {
+      font-size: 1rem;
+      color: var(--clr-accent);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .contact-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--clr-accent-light);
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+    }
+    .contact-value {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      color: var(--clr-white);
+      font-weight: 400;
+    }
+    .contact-value a { color: inherit; text-decoration: none; transition: color 0.3s; }
+    .contact-value a:hover { color: var(--clr-accent); }
+
+    .contact-form .form-control,
+    .contact-form .form-select {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--clr-border);
+      color: var(--clr-white);
+      border-radius: 0;
+      font-family: var(--ff-body);
+      font-size: 0.85rem;
+      padding: 0.85rem 1rem;
+      transition: border-color 0.3s;
+      font-weight: 400;
+    }
+    .contact-form .form-control::placeholder { color: rgba(255,255,255,0.5); }
+    .contact-form .form-control:focus,
+    .contact-form .form-select:focus {
+      background: rgba(255,255,255,0.06);
+      border-color: var(--clr-accent);
+      box-shadow: none;
+      color: var(--clr-white);
+    }
+    .contact-form label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      margin-bottom: 0.45rem;
+      font-weight: 500;
+    }
+    .btn-gold {
+      background: var(--clr-accent);
+      color: var(--clr-bg);
+      border: 1px solid var(--clr-accent);
+      border-radius: 0;
+      font-family: var(--ff-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.5rem;
+      transition: background 0.35s, color 0.35s;
+      cursor: pointer;
+    }
+    .btn-gold:hover { background: transparent; color: var(--clr-accent); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--clr-bg);
+      border-top: 1px solid var(--clr-border);
+      padding: 2.5rem 0;
+    }
+    .footer-brand {
+      font-family: var(--ff-display);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--clr-accent-light);
+    }
+    .footer-copy {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--clr-white);
+    }
+    .footer-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--clr-white);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--clr-accent); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.75s ease, transform 0.75s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.45s; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 991px) {
+      .nav-links { display: none; }
+      .nav-toggler { display: block; }
+      #mainNav { padding: 1.2rem 1.5rem; }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+      .g-item:nth-child(1),
+      .g-item:nth-child(2),
+      .g-item:nth-child(3),
+      .g-item:nth-child(4),
+      .g-item:nth-child(5) {
+        grid-column: span 1;
+        grid-row: span 1;
+        aspect-ratio: 1;
+      }
+      .g-item:nth-child(1) { grid-column: span 2; aspect-ratio: 16/9; }
+    }
+
+    @media (max-width: 575px) {
+      .hero-title { font-size: 3rem; }
+      section { padding: 4rem 0; }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Preloader -->
-  <div class="preloader">
-    <div class="preloader-text">Soho Apparel</div>
-    <div class="preloader-bar"></div>
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <nav id="mainNav">
+    <div class="d-flex align-items-center justify-content-between">
+      <!-- Logo -->
+      <a href="#" class="nav-brand text-decoration-none">
+        <span class="brand-text">Soho Apparel</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button class="nav-toggler" id="navToggler" aria-label="Menu">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu">
+    <button class="close-btn" id="closeMenu"><i class="bi bi-x-lg"></i></button>
+    <a href="#about"        onclick="closeMobileMenu()">About</a>
+    <a href="#capabilities" onclick="closeMobileMenu()">Capabilities</a>
+    <a href="#brands"       onclick="closeMobileMenu()">Brands</a>
+    <a href="#gallery"      onclick="closeMobileMenu()">Gallery</a>
+    <a href="#careers"      onclick="closeMobileMenu()">Careers</a>
+    <a href="#contact"      onclick="closeMobileMenu()">Contact</a>
   </div>
 
-  <div class="home-hero">
-    <div class="home-hero-bg"></div>
-    <div class="home-hero-sheen"></div>
-
-    <div class="home-hero-content">
-      <h1 class="home-hero-title">Soho Apparel Group</h1>
-      <nav class="home-hero-nav">
-        <a href="about.html">About</a>
-        <a href="capabilities.html">Capabilities</a>
-        <a href="brands.html">Brands</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+  <!-- ══════════════ HERO ══════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Southern California — Est. Fashion Wholesale</p>
+      <h1 class="hero-title">Soho<br><em>Apparel</em><br>Group</h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">City of Industry, California &nbsp;·&nbsp; Quality Without Compromise</p>
+      <a href="#about" class="hero-cta">Discover More</a>
     </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
 
-    <!-- Marquee ticker -->
-    <div class="hero-ticker">
-      <div class="hero-ticker-track">
-        <span class="hero-ticker-item">Private Label Manufacturing</span>
-        <span class="hero-ticker-item">Women's Fashion</span>
-        <span class="hero-ticker-item">Activewear</span>
-        <span class="hero-ticker-item">Juniors &amp; Young Contemporary</span>
-        <span class="hero-ticker-item">300,000 sq ft Warehouse</span>
-        <span class="hero-ticker-item">City of Industry, CA</span>
-        <span class="hero-ticker-item">20+ Proprietary Brands</span>
-        <span class="hero-ticker-item">Major US Retailers</span>
-        <!-- Duplicate for seamless loop -->
-        <span class="hero-ticker-item">Private Label Manufacturing</span>
-        <span class="hero-ticker-item">Women's Fashion</span>
-        <span class="hero-ticker-item">Activewear</span>
-        <span class="hero-ticker-item">Juniors &amp; Young Contemporary</span>
-        <span class="hero-ticker-item">300,000 sq ft Warehouse</span>
-        <span class="hero-ticker-item">City of Industry, CA</span>
-        <span class="hero-ticker-item">20+ Proprietary Brands</span>
-        <span class="hero-ticker-item">Major US Retailers</span>
+  <!-- ══════════════ ABOUT ══════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 reveal">
+          <div class="about-img-wrap">
+            <img
+              src="https://static.wixstatic.com/media/11062b_0772d30e39b5493b94d82172abf46cc6f000.jpg/v1/fill/w_1920,h_1080,al_c,q_90,enc_avif,quality_auto/11062b_0772d30e39b5493b94d82172abf46cc6f000.jpg"
+              alt="Soho Apparel"
+            />
+            <div class="about-img-badge">
+              25+<small>Years in Industry</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 offset-lg-1 reveal reveal-delay-2">
+          <p class="section-label">About Us</p>
+          <h2 class="section-title">Fashion Wholesale<br>Done <em>Right</em></h2>
+          <div class="gold-rule"></div>
+          <p class="section-body mb-4">
+            Soho Apparel Group is a leading fashion wholesaler based in Southern California. We specialize in delivering trend-forward styles with uncompromising quality to retailers across the country.
+          </p>
+          <p class="section-body mb-4">
+            Located at 15025 Proctor Avenue, City of Industry, our state-of-the-art facility supports rapid turnaround times, private labeling, and custom production — everything a modern retailer needs.
+          </p>
+          <a href="#contact" class="hero-cta" style="opacity:1; animation:none;">Get in Touch</a>
+        </div>
       </div>
     </div>
+  </section>
 
-    <div class="scroll-indicator">
-      <div class="scroll-indicator-line"></div>
+  <!-- ══════════════ CAPABILITIES ══════════════ -->
+  <section id="capabilities">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Our <em>Capabilities</em></h2>
+        <div class="gold-rule mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-1">
+          <div class="cap-card">
+            <div class="cap-num">01</div>
+            <div class="cap-title">Design & Development</div>
+            <p class="cap-desc">In-house design team crafting seasonal collections that respond to market trends and consumer demand.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-2">
+          <div class="cap-card">
+            <div class="cap-num">02</div>
+            <div class="cap-title">Private Label</div>
+            <p class="cap-desc">Full private label services — from concept to finished garment, branded exclusively for your retail identity.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-3">
+          <div class="cap-card">
+            <div class="cap-num">03</div>
+            <div class="cap-title">Wholesale Distribution</div>
+            <p class="cap-desc">Efficient nationwide distribution network ensuring your orders arrive on time and in perfect condition.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 reveal reveal-delay-4">
+          <div class="cap-card">
+            <div class="cap-num">04</div>
+            <div class="cap-title">Custom Production</div>
+            <p class="cap-desc">Flexible MOQs and custom manufacturing options tailored to boutique buyers and large-scale retailers alike.</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <script src="../js/main.js"></script>
+  <!-- ══════════════ BRANDS ══════════════ -->
+  <section id="brands">
+    <div class="container mb-5 reveal">
+      <p class="section-label text-center">Our Portfolio</p>
+      <h2 class="section-title text-center">Brands We <em>Carry</em></h2>
+      <div class="gold-rule mx-auto"></div>
+    </div>
+    <!-- Marquee -->
+    <div class="brand-marquee-track py-2">
+      <div class="brand-marquee-inner" id="marqueeInner">
+        <!-- duplicated for seamless loop -->
+        <div class="brand-pill">Soho Girl</div>
+        <div class="brand-pill">Urban Chic</div>
+        <div class="brand-pill">Pacific Label</div>
+        <div class="brand-pill">West Coast Style</div>
+        <div class="brand-pill">Luxe & Co.</div>
+        <div class="brand-pill">Indigo Lane</div>
+        <div class="brand-pill">Maven</div>
+        <div class="brand-pill">Velvet Thread</div>
+        <div class="brand-pill">Soho Girl</div>
+        <div class="brand-pill">Urban Chic</div>
+        <div class="brand-pill">Pacific Label</div>
+        <div class="brand-pill">West Coast Style</div>
+        <div class="brand-pill">Luxe & Co.</div>
+        <div class="brand-pill">Indigo Lane</div>
+        <div class="brand-pill">Maven</div>
+        <div class="brand-pill">Velvet Thread</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ GALLERY ══════════════ -->
+  <section id="gallery">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">Our <em>Gallery</em></h2>
+        <div class="gold-rule mx-auto"></div>
+      </div>
+      <div class="gallery-grid reveal">
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=800&q=80" alt="Fashion 1" />
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?w=600&q=80" alt="Fashion 2" />
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?w=600&q=80" alt="Fashion 3" />
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500&q=80" alt="Fashion 4" />
+        </div>
+        <div class="g-item">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80" alt="Fashion 5" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CAREERS ══════════════ -->
+  <section id="careers" style="background: var(--clr-surface);">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal">
+          <p class="section-label">Join the Team</p>
+          <h2 class="section-title">Careers at<br><em>Soho Apparel</em></h2>
+          <div class="gold-rule"></div>
+          <p class="section-body mb-4">
+            We're always looking for passionate, driven individuals to join our growing team. From design and merchandising to logistics and sales — if you have a love for fashion and a commitment to quality, we want to hear from you.
+          </p>
+          <a href="#contact" class="hero-cta" style="opacity:1; animation:none;">Apply Now</a>
+        </div>
+        <div class="col-lg-5 offset-lg-1 reveal reveal-delay-2">
+          <div class="row g-3">
+            <div class="col-12">
+              <div class="cap-card">
+                <div class="cap-title">Open Positions</div>
+                <p class="cap-desc">Fashion Designer · Wholesale Sales Rep · Warehouse Coordinator · Marketing Specialist</p>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="cap-card">
+                <div class="cap-title">Benefits</div>
+                <p class="cap-desc">Competitive salary · Health benefits · Industry discounts · Creative work environment · Career growth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ CONTACT ══════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="text-center mb-5 reveal">
+        <p class="section-label">Get In Touch</p>
+        <h2 class="section-title">Contact <em>Us</em></h2>
+        <div class="gold-rule mx-auto"></div>
+      </div>
+
+      <div class="row g-5">
+        <!-- Info -->
+        <div class="col-lg-4 reveal">
+          <div class="contact-line">
+            <i class="bi bi-envelope contact-icon"></i>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">
+                <a href="mailto:INFO@SOHOAPPARELGROUP.COM">info@sohoapparelgroup.com</a>
+              </div>
+            </div>
+          </div>
+          <div class="contact-line">
+            <i class="bi bi-geo-alt contact-icon"></i>
+            <div>
+              <div class="contact-label">Address</div>
+              <div class="contact-value">15025 Proctor Ave,<br>City of Industry, CA 91746</div>
+            </div>
+          </div>
+          <div class="contact-line">
+            <i class="bi bi-telephone contact-icon"></i>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">
+                <a href="tel:6262792808">626-279-2808</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="col-lg-7 offset-lg-1 reveal reveal-delay-2">
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <div class="row g-3">
+              <div class="col-sm-6">
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="Jane" required />
+              </div>
+              <div class="col-sm-6">
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Smith" required />
+              </div>
+              <div class="col-12">
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="jane@example.com" required />
+              </div>
+              <div class="col-12">
+                <label>Subject</label>
+                <input type="text" class="form-control" placeholder="Wholesale Inquiry" />
+              </div>
+              <div class="col-12">
+                <label>Message</label>
+                <textarea class="form-control" rows="4" placeholder="Tell us about your needs..."></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn-gold">Send Message</button>
+              </div>
+            </div>
+          </form>
+          <div id="formSuccess" style="display:none; margin-top:1rem;">
+            <p style="color:var(--clr-accent); font-size:0.78rem; letter-spacing:0.15em;">
+              ✓ &nbsp; Message sent. We'll be in touch shortly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════ FOOTER ══════════════ -->
+  <footer>
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+        <span class="footer-brand">Soho Apparel Group</span>
+        <div class="footer-links d-flex gap-4 flex-wrap justify-content-center">
+          <a href="#about">About</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#brands">Brands</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <span class="footer-copy">© 2025 Soho Apparel Group. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ══════════════ SCRIPTS ══════════════ -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ── Navbar scroll effect
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // ── Mobile menu
+    const toggler   = document.getElementById('navToggler');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeBtn  = document.getElementById('closeMenu');
+
+    toggler.addEventListener('click', () => mobileMenu.classList.add('open'));
+    closeBtn.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+    }
+
+    // ── Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Contact form fake submit
+    function handleSubmit(e) {
+      e.preventDefault();
+      e.target.reset();
+      document.getElementById('formSuccess').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('formSuccess').style.display = 'none';
+      }, 5000);
+    }
+  </script>
 </body>
 </html>
