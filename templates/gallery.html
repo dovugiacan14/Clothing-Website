@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soho Apparel Group | Contact</title>
+  <title>Soho Apparel Group | Gallery</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/main.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/main.css"/>
 </head>
 <body>
 
@@ -22,9 +22,9 @@
       <a href="about.html">About</a>
       <a href="capabilities.html">Capabilities</a>
       <a href="brands.html">Brands</a>
-      <a href="gallery.html">Gallery</a>
+      <a href="gallery.html" class="active">Gallery</a>
       <a href="careers.html">Careers</a>
-      <a href="contact.html" class="active">Contact</a>
+      <a href="contact.html">Contact</a>
     </div>
     <button class="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -43,50 +43,22 @@
   <div class="page-body">
 
     <div class="section reveal">
-      <h2 class="heading-lg">Contact Us</h2>
-      <p class="text-intro">We'd love to hear from you.</p>
+      <h2 class="heading-lg">Gallery</h2>
+      <p class="text-intro">A glimpse into our collections and workspace.</p>
     </div>
 
-    <div class="section contact-grid">
-
-      <div class="reveal">
-        <div class="contact-info-block">
-          <h4>Address</h4>
-          <p>15025 Proctor Ave.<br>City of Industry, CA 91746</p>
-        </div>
-        <div class="contact-info-block">
-          <h4>Contact</h4>
-          <p><a href="tel:6262792808">626-279-2808</a></p>
-          <p><a href="mailto:info@sohoapparelgroup.com">info@sohoapparelgroup.com</a></p>
-        </div>
-        <div class="contact-info-block">
-          <h4>Opening Hours</h4>
-          <p>Mon – Fri<br>9:00 am – 6:00 pm</p>
-        </div>
+    <div class="section section--wide">
+      <div class="gallery-grid reveal">
+        <div class="gallery-item" style="background:linear-gradient(135deg,#d8d0c4,#c4bcb0)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#b8ccd4,#8aaab8)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#c9c1b5,#b5ad9f)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#d4cec6,#bfb8ae)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#c0d0d8,#96b2bf)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#ddd6ca,#cac2b4)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#c8c0b2,#afa798)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#b4c8d0,#8aa8b8)"></div>
+        <div class="gallery-item" style="background:linear-gradient(135deg,#d0c8bc,#bcb4a6)"></div>
       </div>
-
-      <form class="contact-form reveal" onsubmit="return false;">
-        <div class="form-row">
-          <div class="form-field">
-            <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname" required/>
-          </div>
-          <div class="form-field">
-            <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname" required/>
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required/>
-        </div>
-        <div class="form-field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message"></textarea>
-        </div>
-        <button type="submit" class="btn-submit">Send</button>
-      </form>
-
     </div>
 
   </div>
@@ -118,6 +90,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

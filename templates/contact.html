@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soho Apparel Group | Careers</title>
+  <title>Soho Apparel Group | Contact</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="css/main.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Josefin+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/main.css"/>
 </head>
 <body>
 
@@ -23,8 +23,8 @@
       <a href="capabilities.html">Capabilities</a>
       <a href="brands.html">Brands</a>
       <a href="gallery.html">Gallery</a>
-      <a href="careers.html" class="active">Careers</a>
-      <a href="contact.html">Contact</a>
+      <a href="careers.html">Careers</a>
+      <a href="contact.html" class="active">Contact</a>
     </div>
     <button class="nav-hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -42,21 +42,51 @@
 
   <div class="page-body">
 
-    <div class="section careers-section reveal">
-      <h2 class="heading-lg">Career Opportunities</h2>
-      <div class="text-body">
-        <p>We are super excited that you are considering joining our SOHO APPAREL GROUP family. We are an equal opportunity employer and are always looking for motivated and passionate people who are committed to making our company the best place to work. We offer a comprehensive and affordable benefits package to help our employees achieve a healthy work-life balance. If you are a team player who enjoys working in a diverse environment, meeting new people, and is up for a challenge, then our door is open to you.</p>
-      </div>
+    <div class="section reveal">
+      <h2 class="heading-lg">Contact Us</h2>
+      <p class="text-intro">We'd love to hear from you.</p>
     </div>
 
-    <div class="section"><div class="divider"></div></div>
+    <div class="section contact-grid">
 
-    <div class="section reveal">
-      <h3 class="heading-md">Current Openings</h3>
-      <div class="careers-opening">
-        <h4>No Current Openings</h4>
-        <p>We have no current openings available. Please send your resume to <a href="mailto:info@sohoapparelgroup.com" style="color:var(--dark);border-bottom:1px solid var(--border)">info@sohoapparelgroup.com</a> or mail your resume to our address.</p>
+      <div class="reveal">
+        <div class="contact-info-block">
+          <h4>Address</h4>
+          <p>15025 Proctor Ave.<br>City of Industry, CA 91746</p>
+        </div>
+        <div class="contact-info-block">
+          <h4>Contact</h4>
+          <p><a href="tel:6262792808">626-279-2808</a></p>
+          <p><a href="mailto:info@sohoapparelgroup.com">info@sohoapparelgroup.com</a></p>
+        </div>
+        <div class="contact-info-block">
+          <h4>Opening Hours</h4>
+          <p>Mon – Fri<br>9:00 am – 6:00 pm</p>
+        </div>
       </div>
+
+      <form class="contact-form reveal" onsubmit="return false;">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" required/>
+          </div>
+          <div class="form-field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" required/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required/>
+        </div>
+        <div class="form-field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message"></textarea>
+        </div>
+        <button type="submit" class="btn-submit"><span>Send</span></button>
+      </form>
+
     </div>
 
   </div>
@@ -88,6 +118,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
