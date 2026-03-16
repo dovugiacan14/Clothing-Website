@@ -31,9 +31,12 @@ const AboutPage = () => {
           </p>
         </Reveal>
         <Reveal direction="right" delay={200}>
-          <img
-            src="https://static.wixstatic.com/media/8c1622_baa89258df5f4e5496cc99f37cddcbf0f000.jpg/v1/fill/w_628,h_354,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8c1622_baa89258df5f4e5496cc99f37cddcbf0f000.jpg"
-            alt="Soho Apparel Group video thumbnail"
+          <video
+            src="https://video.wixstatic.com/video/8c1622_baa89258df5f4e5496cc99f37cddcbf0/720p/mp4/file.mp4"
+            poster="https://static.wixstatic.com/media/8c1622_baa89258df5f4e5496cc99f37cddcbf0f000.jpg/v1/fill/w_628,h_354,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/8c1622_baa89258df5f4e5496cc99f37cddcbf0f000.jpg"
+            controls
+            playsInline
+            preload="none"
             className="w-full h-auto object-cover"
           />
         </Reveal>
