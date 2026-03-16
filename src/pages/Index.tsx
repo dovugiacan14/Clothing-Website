@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import heroImage from "@/assets/hero-fabric.jpg";
 
 const navItems = [
@@ -11,22 +12,29 @@ const navItems = [
 ];
 
 const Index = () => {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLoaded(true), 100);
+    return () => clearTimeout(t);
+  }, []);
+
   return (
     <div className="relative h-screen w-full overflow-hidden">
-      {/* Background image */}
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt="Luxury fabric"
-          className="h-full w-full object-cover"
+          className={`h-full w-full object-cover transition-transform duration-[2s] ease-out ${loaded ? "scale-100" : "scale-110"}`}
         />
         <div className="absolute inset-0 bg-primary/20" />
       </div>
 
-      {/* Centered content */}
       <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
         <h1
-          className="text-5xl md:text-7xl lg:text-[86px] font-light tracking-[0.02em] text-primary-foreground mb-8"
+          className={`text-5xl md:text-7xl lg:text-[86px] font-light tracking-[0.02em] text-primary-foreground mb-8 transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
           style={{
             fontFamily: "'Montserrat', sans-serif",
             fontWeight: 300,
@@ -36,13 +44,15 @@ const Index = () => {
           SOHO APPAREL GROUP
         </h1>
 
-        {/* Navigation links below title */}
         <nav className="flex flex-wrap justify-center gap-6 md:gap-10">
-          {navItems.map((item) => (
+          {navItems.map((item, i) => (
             <Link
               key={item.to}
               to={item.to}
-              className="nav-link text-primary-foreground"
+              className={`nav-link text-primary-foreground transition-all duration-700 ease-out ${
+                loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: `${600 + i * 100}ms` }}
             >
               {item.label}
             </Link>
