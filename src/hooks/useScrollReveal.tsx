@@ -35,8 +35,8 @@ export const Reveal = ({ children, className = "", delay = 0, direction = "up" }
 
   const directionStyles: Record<string, string> = {
     up: "translate-y-8",
-    left: "translate-x-8",
-    right: "-translate-x-8",
+    left: "-translate-x-10",
+    right: "translate-x-10",
     none: "",
   };
 

@@ -72,34 +72,34 @@ const CapabilitiesPage = () => {
       </Reveal>
 
       {/* Product Images Grid - Row 1 */}
-      <Reveal>
-        <div className="flex flex-wrap justify-center gap-4 mb-4">
-          {productImages.map((img, i) => (
-            <img key={i} src={img.src} alt={img.alt} className="h-[280px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
-          ))}
-        </div>
-      </Reveal>
+      <div className="flex flex-wrap justify-center gap-4 mb-4">
+        {productImages.map((img, i) => (
+          <Reveal key={i} direction="up" delay={i * 120}>
+            <img src={img.src} alt={img.alt} className="h-[280px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          </Reveal>
+        ))}
+      </div>
 
       {/* Product Images Grid - Row 2 */}
-      <Reveal>
-        <div className="flex flex-wrap justify-center gap-4 mb-4">
-          {moreImages.map((img, i) => (
-            <img key={i} src={img.src} alt={img.alt} className="h-[320px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
-          ))}
-        </div>
-      </Reveal>
+      <div className="flex flex-wrap justify-center gap-4 mb-4">
+        {moreImages.map((img, i) => (
+          <Reveal key={i} direction="up" delay={i * 120}>
+            <img src={img.src} alt={img.alt} className="h-[320px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          </Reveal>
+        ))}
+      </div>
 
       {/* Product Images Grid - Row 3 */}
-      <Reveal>
-        <div className="flex flex-wrap justify-center gap-4 mb-20">
-          {bottomImages.map((img, i) => (
-            <img key={i} src={img.src} alt={img.alt} className="h-[300px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
-          ))}
-        </div>
-      </Reveal>
+      <div className="flex flex-wrap justify-center gap-4 mb-20">
+        {bottomImages.map((img, i) => (
+          <Reveal key={i} direction="up" delay={i * 120}>
+            <img src={img.src} alt={img.alt} className="h-[300px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          </Reveal>
+        ))}
+      </div>
 
       {/* Trusted Supplier Section */}
-      <Reveal>
+      <Reveal direction="left">
         <div className="mb-20">
           <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-8">Trusted Supplier</h2>
           <p className="text-foreground font-body text-base font-medium leading-relaxed mb-10 max-w-4xl">
@@ -113,7 +113,7 @@ const CapabilitiesPage = () => {
       </Reveal>
 
       {/* Warehouse Section */}
-      <Reveal>
+      <Reveal direction="right">
         <div className="mb-20">
           <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">Warehouse</h2>
           <p className="text-foreground font-body text-base font-medium leading-relaxed max-w-4xl">
