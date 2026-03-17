@@ -8,7 +8,7 @@ const CareersPage = () => {
       </Reveal>
 
       <Reveal delay={150}>
-        <div className="text-foreground/80 font-body text-sm leading-relaxed mb-12">
+        <div className="text-foreground font-body text-base font-medium leading-relaxed mb-12">
           <p>
             We are super excited that you are considering joining our SOHO APPAREL GROUP family.
             We are an equal opportunity employer and are always looking for motivated and passionate

@@ -14,7 +14,7 @@ const BrandsPage = () => {
       </Reveal>
 
       <Reveal delay={150}>
-        <div className="space-y-6 text-foreground/80 font-body text-sm leading-relaxed text-center mb-16">
+        <div className="space-y-6 text-foreground font-body text-base font-medium leading-relaxed text-center mb-16">
           <p>Our company portfolio boasts over 20 proprietary brands, allowing us to meet diverse market demands.</p>
           <p>Some of our standout labels include SOHO LADY, SOHO GIRLS, SOHO KIDS, SOHO SPORTS, SOHO MATERNITY, SOHO BLUE, LOVE SOHO, EMMA & ELSA, LARK & GREY, and COCO & SHAY. These brands span various demographics, from kids' fashion to activewear, maternity wear, and beyond, providing a full spectrum of choices for fashion-forward consumers.</p>
           <p>Moreover, we are the proud owners of the trendy U.S. streetwear brand BLVD, which focuses on men's clothing, footwear, and accessories, gaining a strong following in the street fashion scene.</p>

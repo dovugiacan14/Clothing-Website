@@ -36,10 +36,10 @@ const CapabilitiesPage = () => {
       {/* Hero Section */}
       <div className="grid md:grid-cols-2 gap-10 items-start mb-20">
         <Reveal direction="left">
-          <p className="text-foreground/80 font-body text-sm leading-relaxed mb-4">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed mb-4">
             Soho Apparel Group is a leader in the fashion industry, specializing in a diverse range of apparel categories. Our extensive product offerings include infant clothing, children's wear (ages 4-6 and 7-16), young adult fashion, women's wear, business attire, sportswear, maternity wear, dresses, lingerie, and more.
           </p>
-          <p className="text-foreground/80 font-body text-sm leading-relaxed">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed">
             With 14 distinct departments and product lines, we cater to the needs of a wide and varied customer base, always focusing on delivering style, quality, and comfort.
           </p>
         </Reveal>
@@ -54,7 +54,7 @@ const CapabilitiesPage = () => {
 
       {/* Design capabilities text */}
       <Reveal>
-        <p className="text-foreground/80 font-body text-sm leading-relaxed mb-20 max-w-4xl mx-auto text-center">
+        <p className="text-foreground font-body text-base font-medium leading-relaxed mb-20 max-w-4xl mx-auto text-center">
           Our design capabilities are powered by a talented in-house team that includes experienced fashion designers, pattern makers, tailors, and print designers, all of whom work together to ensure the latest trends and innovations are seamlessly integrated into our collections. In addition to our design expertise, we also have a dedicated team specializing in building and nurturing our brands, ensuring that each product we create tells a unique story and resonates with our target customers.
         </p>
       </Reveal>
@@ -102,7 +102,7 @@ const CapabilitiesPage = () => {
       <Reveal>
         <div className="mb-20">
           <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-8">Trusted Supplier</h2>
-          <p className="text-foreground/80 font-body text-sm leading-relaxed mb-10 max-w-4xl">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed mb-10 max-w-4xl">
             Soho Apparel Group is proud to be one of the top three apparel suppliers to major U.S. retailers, including Ross, TJ Maxx, Burlington, Marshalls, and DD's Discounts. Our commitment to quality, timely delivery, and understanding consumer trends has made us a trusted partner for these renowned chains. Additionally, we are a major supplier for the prominent U.S. e-commerce platform Fashion Nova, where our sportswear lines are among the most popular and widely distributed.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
@@ -116,7 +116,7 @@ const CapabilitiesPage = () => {
       <Reveal>
         <div className="mb-20">
           <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">Warehouse</h2>
-          <p className="text-foreground/80 font-body text-sm leading-relaxed max-w-4xl">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed max-w-4xl">
             To support our large-scale operations, Soho Apparel Group manages a state-of-the-art 300,000-square-foot warehouse, equipped to handle high-volume inventory with efficiency and precision. This facility allows us to maintain excellent logistics and ensures that our products reach our retail partners and customers quickly and reliably.
           </p>
         </div>
@@ -126,7 +126,7 @@ const CapabilitiesPage = () => {
       <Reveal>
         <div>
           <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">Commitment</h2>
-          <p className="text-foreground/80 font-body text-sm leading-relaxed max-w-4xl">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed max-w-4xl">
             With a commitment to innovation, customer satisfaction, and excellence in every aspect of our business, Soho Apparel Group continues to drive the future of fashion. Whether it's through our cutting-edge designs or our seamless supply chain, we strive to set the standard in the global apparel market.
           </p>
         </div>

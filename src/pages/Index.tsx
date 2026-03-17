@@ -29,7 +29,7 @@ const Index = () => {
         loop
         muted
         playsInline
-        ref={(el) => { if (el) el.playbackRate = 0.5; }}
+        ref={(el) => { if (el) el.playbackRate = 0.3; }}
       />
 
       {/* Gradient overlay for depth */}

@@ -45,13 +45,13 @@ const AboutPage = () => {
       {/* About Text */}
       <Reveal>
         <div className="max-w-4xl mx-auto mb-20 space-y-4">
-          <p className="text-foreground/80 font-body text-sm leading-relaxed">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed">
             Founded in 2002 in the heart of California, Soho Apparel Group began as a private label supplier for major apparel brands and has grown into a cornerstone of American fashion. From our expansive 300,000-square-foot warehouse in City of Industry, we've become one of North America's most trusted fashion brands. Within a few years, we launched our own series of brands, delivering trendsetting tops, bottoms, and activewear for Juniors, Young Contemporary, Missy, and Kids markets.
           </p>
-          <p className="text-foreground/80 font-body text-sm leading-relaxed">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed">
             Our mission is to empower customers across the United States with high-quality, stylish apparel at competitive prices. Fueled by innovation and a passion for exceptional value, Soho Apparel Group sets the standard for excellence, ensuring shoppers nationwide look and feel their best.
           </p>
-          <p className="text-foreground/80 font-body text-sm leading-relaxed">
+          <p className="text-foreground font-body text-base font-medium leading-relaxed">
             At Soho Apparel Group, our mission is clear: to exceed customer expectations with top-quality products at competitive prices. Driven by a passion for innovation and unmatched style, we deliver exceptional value every day, solidifying our place as a leader in the apparel industry.
           </p>
         </div>
