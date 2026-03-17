@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import heroImage from "@/assets/hero-fabric.jpg";
+import bgVideo from "@/assets/background.mp4";
 
 const navItems = [
   { label: "ABOUT", to: "/about" },
@@ -21,67 +21,16 @@ const Index = () => {
 
   return (
     <div className="relative h-screen w-full overflow-hidden bg-primary">
-      {/* Hero fabric with wave motion - Multiple layers */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Layer 1 - Main fabric */}
-        <div
-          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            mixBlendMode: "overlay",
-            opacity: 0.7,
-            animation: "waveMotion1 6s ease-in-out infinite",
-            transformOrigin: "center",
-          }}
-        />
-
-        {/* Layer 2 - Secondary fabric with delay */}
-        <div
-          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "105% 105%",
-            backgroundPosition: "center",
-            mixBlendMode: "overlay",
-            opacity: 0.5,
-            animation: "waveMotion2 6s ease-in-out infinite",
-            animationDelay: "0.75s",
-            transformOrigin: "center",
-          }}
-        />
-
-        {/* Layer 3 - Tertiary fabric with more delay */}
-        <div
-          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "110% 110%",
-            backgroundPosition: "center",
-            mixBlendMode: "overlay",
-            opacity: 0.3,
-            animation: "waveMotion3 6s ease-in-out infinite",
-            animationDelay: "1.5s",
-            transformOrigin: "center",
-          }}
-        />
-
-        {/* Layer 4 - Diagonal movement from bottom-right to top-left */}
-        <div
-          className={`absolute inset-0 transition-all duration-[3000ms] ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "115% 115%",
-            backgroundPosition: "bottom right",
-            mixBlendMode: "overlay",
-            opacity: 0.25,
-            animation: "waveMotion4 6s ease-in-out infinite",
-            animationDelay: "2s",
-            transformOrigin: "bottom right",
-          }}
-        />
-      </div>
+      {/* Background video */}
+      <video
+        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[2000ms] ease-out ${loaded ? "opacity-70" : "opacity-0"}`}
+        src={bgVideo}
+        autoPlay
+        loop
+        muted
+        playsInline
+        ref={(el) => { if (el) el.playbackRate = 0.5; }}
+      />
 
       {/* Gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/50" />
