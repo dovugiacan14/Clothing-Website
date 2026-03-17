@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import bgVideo from "@/assets/background.mp4";
+import bgVideo from "@/assets/background_new.mp4";
 
 const navItems = [
   { label: "ABOUT", to: "/about" },
@@ -29,7 +29,7 @@ const Index = () => {
         loop
         muted
         playsInline
-        ref={(el) => { if (el) el.playbackRate = 0.3; }}
+        ref={(el) => { if (el) el.playbackRate = 0.4; }}
       />
 
       {/* Gradient overlay for depth */}
