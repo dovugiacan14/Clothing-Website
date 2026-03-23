@@ -2,38 +2,89 @@ import { Reveal } from "@/hooks/useScrollReveal";
 
 const CareersPage = () => {
   return (
-    <div className="page-content">
-      <Reveal>
-        <h1 className="page-title mb-10">Career Opportunities</h1>
-      </Reveal>
+    <div className="overflow-hidden">
+      {/* Hero */}
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-navy/50 mb-4">
+              Join Our Team
+            </p>
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-wide text-foreground leading-[1.1] mb-6">
+              Career Opportunities
+            </h1>
+            <div className="w-16 h-[2px] bg-navy mb-8" />
+            <p className="font-body text-[17px] text-foreground/90 leading-[1.8]">
+              We are super excited that you are considering joining our Central
+              Apparel family. We are an equal opportunity employer and are always
+              looking for motivated and passionate people who are committed to
+              making our company the best place to work.
+            </p>
+          </div>
+        </Reveal>
+      </section>
 
-      <Reveal delay={150}>
-        <div className="text-foreground font-body text-base font-medium leading-relaxed mb-12">
-          <p>
-            We are super excited that you are considering joining our SOHO APPAREL GROUP family.
-            We are an equal opportunity employer and are always looking for motivated and passionate
-            people who are committed making our company the best place to work. We offer a comprehensive
-            and affordable benefits package to help our employees achieve a healthy work-life balance.
-            If you are a team player who enjoys working in a diverse environment, meeting new people,
-            and is up to for a challenge, then our door is open to you.
-          </p>
+      {/* Benefits */}
+      <section className="bg-navy/[0.03]">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <Reveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-foreground mb-6">
+                Why Work With Us
+              </h2>
+              <div className="w-16 h-[2px] bg-navy mx-auto mb-8" />
+              <p className="font-body text-[17px] text-foreground/85 leading-[1.8]">
+                We offer a comprehensive and affordable benefits package to help
+                our employees achieve a healthy work-life balance. If you are a
+                team player who enjoys working in a diverse environment, meeting
+                new people, and is up for a challenge, then our door is open to
+                you.
+              </p>
+            </div>
+          </Reveal>
         </div>
-      </Reveal>
+      </section>
 
-      <Reveal delay={300}>
-        <h2 className="font-display text-3xl tracking-wide text-foreground mb-4">Current Openings</h2>
-        <p className="text-foreground/60 font-body text-sm mb-12">We have no current openings available.</p>
-      </Reveal>
+      {/* Current Openings */}
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <Reveal>
+          <div>
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-navy/50 mb-4">
+              Openings
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-foreground mb-6">
+              Current Openings
+            </h2>
+            <div className="w-16 h-[2px] bg-navy mb-8" />
+            <p className="font-body text-[17px] text-foreground/80 leading-[1.8]">
+              We have no current openings available.
+            </p>
+          </div>
+        </Reveal>
+      </section>
 
-      <Reveal delay={400}>
-        <p className="text-foreground/70 font-body text-sm">
-          Please send resume to{" "}
-          <a href="mailto:info@sohoapparelgroup.com" className="text-navy-light underline underline-offset-2 hover:opacity-70 transition-opacity">
-            info@sohoapparelgroup.com
-          </a>{" "}
-          or mail resume to our address.
-        </p>
-      </Reveal>
+      {/* Contact */}
+      <section className="bg-navy/[0.03]">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <Reveal>
+            <div className="max-w-3xl">
+              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-foreground mb-6">
+                Get In Touch
+              </h2>
+              <p className="font-body text-[17px] text-foreground/85 leading-[1.8]">
+                Please send your resume to{" "}
+                <a
+                  href="mailto:info@centralapparel.com"
+                  className="text-navy font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
+                >
+                  info@centralapparel.com
+                </a>{" "}
+                or mail your resume to our address.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
     </div>
   );
 };

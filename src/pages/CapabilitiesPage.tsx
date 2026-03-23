@@ -1,136 +1,356 @@
 import { Reveal } from "@/hooks/useScrollReveal";
+import capabilitiesHero from "@/assets/about.png";
 
-const categories = [
-  "INFANT", "CHILDREN", "YOUNG ADULT", "WOMEN'S", "MATERNITY", "JEANS", "LINGERIE", "SPORTS",
+// Down Jacket images
+import dj1 from "@/assets/capabilities/product_categories/down_jacket/dj_1.webp";
+import dj2 from "@/assets/capabilities/product_categories/down_jacket/dj_2.jpg";
+import dj3 from "@/assets/capabilities/product_categories/down_jacket/dj_3.jpg";
+
+// Padded & Quilted Jackets images
+import pqj1 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_1.jpg";
+import pqj2 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_2.jpg";
+import pqj3 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_3.jpg";
+import pqj4 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_4.jpg";
+
+// Outerwear images
+import ow1 from "@/assets/capabilities/product_categories/outerwear/outerwear_1.jpg";
+import ow2 from "@/assets/capabilities/product_categories/outerwear/outer_wear_2.jpg";
+import ow3 from "@/assets/capabilities/product_categories/outerwear/outerwear_3.jpg";
+import ow4 from "@/assets/capabilities/product_categories/outerwear/outerwear_4.jpg";
+import ow5 from "@/assets/capabilities/product_categories/outerwear/outerwear_5.jpg";
+
+// Workwear images
+import ww1 from "@/assets/capabilities/product_categories/workwear_garments/workwear.jpg";
+import ww2 from "@/assets/capabilities/product_categories/workwear_garments/workwear_2.jpg";
+import ww3 from "@/assets/capabilities/product_categories/workwear_garments/workwear_3.jpg";
+import ww4 from "@/assets/capabilities/product_categories/workwear_garments/workwear_4.jpg";
+
+// Medical clothing images
+import med1 from "@/assets/capabilities/product_categories/medical_clothing/medical.jpg";
+import med2 from "@/assets/capabilities/product_categories/medical_clothing/medical_2.png";
+
+const productCategories = [
+  {
+    name: "Down Jacket",
+    structure: "Quilted construction with duck down filling and seam sealing",
+    material: "Polyester / Nylon shell, synthetic fiber filling",
+    images: [dj1, dj2, dj3],
+  },
+  {
+    name: "Padded & Quilted Jackets",
+    structure: "Quilted construction with lightweight synthetic padding and seam sealing",
+    material: "Nylon / polyester shell fabrics available",
+    images: [pqj1, pqj2, pqj3, pqj4],
+  },
+  {
+    name: "Outerwear",
+    structure: "Water-resistant shell jackets with functional construction",
+    material: "Polyester / Nylon fabrics with breathable coating or membrane",
+    images: [ow1, ow2, ow3, ow4, ow5],
+  },
+  {
+    name: "Workwear Garments",
+    structure: "Durable construction designed for industrial and professional use",
+    material: "Heavy-duty cotton, polyester blends with reinforced stitching",
+    images: [ww1, ww2, ww3, ww4],
+  },
+  {
+    name: "Medical Clothing",
+    structure: "Functional design for healthcare and medical environments",
+    material: "Antimicrobial, breathable fabrics with easy-care properties",
+    images: [med1, med2],
+  },
 ];
 
-const productImages = [
-  { src: "https://static.wixstatic.com/media/8c1622_c4179d43a3be46eab10959bc09829123~mv2.jpg/v1/fill/w_241,h_362,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSLM005.jpg", alt: "Fashion product 1" },
-  { src: "https://static.wixstatic.com/media/8c1622_e64dc84a3c9945fb90293701dad9d426~mv2.jpg/v1/fill/w_241,h_362,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSLM006.jpg", alt: "Fashion product 2" },
-  { src: "https://static.wixstatic.com/media/8c1622_b0f5d19c4f6d494286ce88af6cde6a78~mv2.jpg/v1/fill/w_241,h_362,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/DSLM007-2.jpg", alt: "Fashion product 3" },
-  { src: "https://static.wixstatic.com/media/8c1622_87591441434e4a8e8915c676e5eca572~mv2.jpg/v1/fill/w_227,h_362,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6346_JPG.jpg", alt: "Fashion product 4" },
-  { src: "https://static.wixstatic.com/media/8c1622_5e5ac0c8cbd248baa795083ac2178e09~mv2.jpg/v1/fill/w_234,h_362,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6363_JPG.jpg", alt: "Fashion product 5" },
-  { src: "https://static.wixstatic.com/media/8c1622_9202d9c66fe44e8aaa5c87c37d92c1f7~mv2.jpg/v1/fill/w_211,h_421,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6054_JPG.jpg", alt: "Fashion product 6" },
+const coreServices = [
+  { title: "Apparel Sourcing", description: "Connecting buyers with vetted Vietnamese garment manufacturers" },
+  { title: "CMPT Production", description: "Cut, Make, Pack & Trim services with material coordination" },
+  { title: "Product Development & Sampling", description: "From concept to production-ready samples" },
+  { title: "FOB Manufacturing", description: "Full package production from fabric to finished goods" },
+  { title: "CMT Production", description: "Cut, Make & Trim services for buyer-supplied materials" },
+  { title: "Production Follow-up & Quality Control", description: "On-site inspections and quality assurance at every stage" },
 ];
 
-const moreImages = [
-  { src: "https://static.wixstatic.com/media/8c1622_c8be004356e6479dbc4ed0b76b646567~mv2.jpg/v1/fill/w_184,h_421,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6058_JPG.jpg", alt: "Fashion product 7" },
-  { src: "https://static.wixstatic.com/media/8c1622_26fed6dc10e24de5929b0c094627f70e~mv2.jpg/v1/fill/w_261,h_421,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6267_JPG.jpg", alt: "Fashion product 8" },
-  { src: "https://static.wixstatic.com/media/8c1622_eb07e786e4e7480eab55366617915e39~mv2.jpg/v1/fill/w_319,h_421,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6065_JPG.jpg", alt: "Fashion product 9" },
-  { src: "https://static.wixstatic.com/media/8c1622_9e9039961700413d801390a6347679f2~mv2.jpg/v1/fill/w_211,h_532,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5924_JPG.jpg", alt: "Fashion product 10" },
-  { src: "https://static.wixstatic.com/media/8c1622_ebc3bce5596c45cb822d2cb8e906b1d1~mv2.jpg/v1/fill/w_241,h_295,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6245_JPG.jpg", alt: "Fashion product 11" },
-  { src: "https://static.wixstatic.com/media/8c1622_f44d5acc533343998ac43bed62a67d71~mv2.jpg/v1/fill/w_241,h_349,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6244_JPG.jpg", alt: "Fashion product 12" },
-];
-
-const bottomImages = [
-  { src: "https://static.wixstatic.com/media/8c1622_7aada9fab4604cec8eee4c906f09e587~mv2.jpg/v1/fill/w_267,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6279_JPG.jpg", alt: "Fashion product 13" },
-  { src: "https://static.wixstatic.com/media/8c1622_2ee76afc63e34be992ff612f0c7744ec~mv2.jpg/v1/fill/w_267,h_289,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6247_JPG.jpg", alt: "Fashion product 14" },
-  { src: "https://static.wixstatic.com/media/8c1622_5a966c7b638e43e58dcd4e81a2d05d97~mv2.jpg/v1/fill/w_267,h_328,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6360_JPG.jpg", alt: "Fashion product 15" },
-  { src: "https://static.wixstatic.com/media/8c1622_dd29c8e413af4e6581933a0194c423e5~mv2.jpg/v1/fill/w_308,h_283,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_6252_JPG.jpg", alt: "Fashion product 16" },
-  { src: "https://static.wixstatic.com/media/8c1622_c0ffc0d62a7241beb7169125eaef3a91~mv2.jpg/v1/fill/w_227,h_518,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_5845.jpg", alt: "Fashion product 17" },
+const whyChooseUsPoints = [
+  "Reliable Factory Network",
+  "Flexible Manufacturing Options",
+  "Strong Production Coordination",
+  "Quality & Transparency",
 ];
 
 const CapabilitiesPage = () => {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-16 md:py-20">
-      {/* Hero Section */}
-      <div className="grid md:grid-cols-2 gap-10 items-start mb-20">
-        <Reveal direction="left">
-          <p className="text-foreground font-body text-base font-medium leading-relaxed mb-4">
-            Soho Apparel Group is a leader in the fashion industry, specializing in a diverse range of apparel categories. Our extensive product offerings include infant clothing, children's wear (ages 4-6 and 7-16), young adult fashion, women's wear, business attire, sportswear, maternity wear, dresses, lingerie, and more.
-          </p>
-          <p className="text-foreground font-body text-base font-medium leading-relaxed">
-            With 14 distinct departments and product lines, we cater to the needs of a wide and varied customer base, always focusing on delivering style, quality, and comfort.
-          </p>
-        </Reveal>
-        <Reveal direction="right" delay={200}>
+    <div className="overflow-hidden">
+      {/* Hero Section - Full Width */}
+      <section className="relative h-[60vh] min-h-[420px] flex items-center">
+        <div className="absolute inset-0">
           <img
-            src="https://static.wixstatic.com/media/25c35148f7e44d63ab6da9fce767c076.jpg/v1/fill/w_567,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/25c35148f7e44d63ab6da9fce767c076.jpg"
-            alt="Fashion design workspace"
-            className="w-full h-auto object-cover"
+            src={capabilitiesHero}
+            alt="Central Apparel manufacturing"
+            className="w-full h-full object-cover"
           />
-        </Reveal>
-      </div>
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-navy/75 to-navy/30" />
+        </div>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 w-full">
+          <Reveal direction="left">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-white/60 mb-4">
+              Our Expertise
+            </p>
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-wide text-white leading-[1.1] mb-6 max-w-2xl">
+              What We Do
+            </h1>
+            <p className="font-body text-lg md:text-xl text-white/85 leading-relaxed max-w-xl">
+              Flexible apparel sourcing and manufacturing solutions from Vietnam
+              for international buyers.
+            </p>
+          </Reveal>
+        </div>
+      </section>
 
-      {/* Design capabilities text */}
-      <Reveal>
-        <p className="text-foreground font-body text-base font-medium leading-relaxed mb-20 max-w-4xl mx-auto text-center">
-          Our design capabilities are powered by a talented in-house team that includes experienced fashion designers, pattern makers, tailors, and print designers, all of whom work together to ensure the latest trends and innovations are seamlessly integrated into our collections. In addition to our design expertise, we also have a dedicated team specializing in building and nurturing our brands, ensuring that each product we create tells a unique story and resonates with our target customers.
-        </p>
-      </Reveal>
+      {/* Intro Text */}
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-center">
+          <Reveal direction="left">
+            <div>
+              <div className="w-12 h-[2px] bg-navy mb-6" />
+              <p className="font-body text-[17px] text-foreground leading-[1.8] mb-5">
+                Central Apparel provides flexible apparel sourcing and
+                manufacturing solutions in Vietnam.
+              </p>
+              <p className="font-body text-[17px] text-foreground/85 leading-[1.8]">
+                We support international buyers through the entire production
+                process, from factory sourcing and product development to
+                manufacturing coordination and shipment preparation.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal direction="right" delay={200}>
+            <img
+              src="https://static.wixstatic.com/media/25c35148f7e44d63ab6da9fce767c076.jpg/v1/fill/w_567,h_380,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/25c35148f7e44d63ab6da9fce767c076.jpg"
+              alt="Fashion design workspace"
+              className="w-full h-auto object-cover"
+            />
+          </Reveal>
+        </div>
+      </section>
 
-      {/* Product Categories */}
-      <Reveal>
-        <div className="mb-10">
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-right text-foreground mb-6">Product Categories</h2>
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-10">
-            {categories.map((cat) => (
-              <span key={cat} className="font-body text-xs tracking-[0.2em] text-foreground/70 uppercase">{cat}</span>
+      {/* Our Core Services */}
+      <section className="bg-navy/[0.03]">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <Reveal>
+            <div className="text-center mb-10">
+              <p className="font-body text-xs tracking-[0.3em] uppercase text-navy/50 mb-4">
+                Services
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide text-foreground mb-4">
+                Our Core Services
+              </h2>
+              <div className="w-16 h-[2px] bg-navy mx-auto" />
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {coreServices.map((service, i) => (
+              <Reveal key={service.title} delay={i * 100}>
+                <div className="bg-white border border-border/50 p-7 hover:shadow-lg transition-shadow duration-300 group h-full">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-10 h-10 bg-navy/5 flex items-center justify-center group-hover:bg-navy/10 transition-colors flex-shrink-0">
+                      <span className="font-display text-lg font-bold text-navy">
+                        0{i + 1}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-xl font-bold text-foreground tracking-wide leading-tight">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="font-body text-[15px] text-foreground/80 leading-[1.7]">
+                    {service.description}
+                  </p>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>
-      </Reveal>
+      </section>
 
-      {/* Product Images Grid - Row 1 */}
-      <div className="flex flex-wrap justify-center gap-4 mb-4">
-        {productImages.map((img, i) => (
-          <Reveal key={i} direction="up" delay={i * 120}>
-            <img src={img.src} alt={img.alt} className="h-[280px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+      {/* Why Choose Us */}
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <Reveal>
+          <div className="mb-10">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-navy/50 mb-4">
+              Why Us
+            </p>
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide text-foreground leading-[1.1] mb-6">
+              Why Choose Us ? 
+            </h2>
+            <div className="w-16 h-[2px] bg-navy mb-6" />
+            <p className="font-body text-[17px] text-foreground/90 leading-[1.8] max-w-3xl">
+              Central Apparel works closely with reliable garment manufacturers
+              across Vietnam to provide efficient sourcing and production
+              solutions. Our team focuses on clear communication, reliable
+              production management, and consistent product quality.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-12">
+          <Reveal direction="left">
+            <img
+              src={capabilitiesHero}
+              alt="Central Apparel team collaboration"
+              className="w-full h-auto object-cover rounded-sm"
+            />
           </Reveal>
-        ))}
-      </div>
-
-      {/* Product Images Grid - Row 2 */}
-      <div className="flex flex-wrap justify-center gap-4 mb-4">
-        {moreImages.map((img, i) => (
-          <Reveal key={i} direction="up" delay={i * 120}>
-            <img src={img.src} alt={img.alt} className="h-[320px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+          <Reveal direction="right" delay={200}>
+            <div className="space-y-6">
+              <div className="border-l-[3px] border-navy pl-6 py-2">
+                <p className="font-body text-[17px] text-foreground/90 leading-[1.8]">
+                  We focus on reliable factory coordination, transparent
+                  communication, and efficient production management to help
+                  buyers source garments in Vietnam with confidence.
+                </p>
+              </div>
+              <p className="font-body text-[17px] text-foreground/85 leading-[1.8]">
+                With strong factory connections across Vietnam, Central Apparel
+                helps buyers manage production efficiently while maintaining
+                quality, transparency, and reliable delivery schedules.
+              </p>
+            </div>
           </Reveal>
-        ))}
-      </div>
+        </div>
 
-      {/* Product Images Grid - Row 3 */}
-      <div className="flex flex-wrap justify-center gap-4 mb-20">
-        {bottomImages.map((img, i) => (
-          <Reveal key={i} direction="up" delay={i * 120}>
-            <img src={img.src} alt={img.alt} className="h-[300px] w-auto object-cover transition-transform duration-500 hover:scale-105" loading="lazy" />
+        <Reveal>
+          <div>
+            <h3 className="font-display text-2xl md:text-3xl font-bold tracking-wide text-foreground mb-4">
+              Reliable, Flexible, and Efficient
+            </h3>
+            <p className="font-body text-[17px] text-foreground/85 leading-[1.8] max-w-3xl mb-8">
+              With strong experience in the Vietnamese apparel industry, Central
+              Apparel helps buyers manage sourcing and production smoothly. We
+              coordinate closely with trusted factories to ensure stable
+              production capacity, competitive pricing, and reliable delivery
+              schedules.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {whyChooseUsPoints.map((point) => (
+                <div
+                  key={point}
+                  className="flex items-center gap-3 bg-navy text-white px-5 py-4"
+                >
+                  <svg
+                    className="w-5 h-5 flex-shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                  <span className="font-body text-sm font-semibold leading-tight">
+                    {point}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Product Categories */}
+      <section className="bg-navy/[0.03]">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <Reveal>
+            <div className="text-center mb-12">
+              <p className="font-body text-xs tracking-[0.3em] uppercase text-navy/50 mb-4">
+                What We Make
+              </p>
+              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide text-foreground leading-[1.1] mb-4">
+                Product Categories
+              </h2>
+              <div className="w-16 h-[2px] bg-navy mx-auto mb-6" />
+              <p className="font-body text-[17px] text-foreground/85 leading-[1.8] max-w-2xl mx-auto">
+                We specialize in outerwear and quilted products for global
+                brands, retailers and trading companies.
+              </p>
+            </div>
           </Reveal>
-        ))}
-      </div>
 
-      {/* Trusted Supplier Section */}
-      <Reveal direction="left">
-        <div className="mb-20">
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-8">Trusted Supplier</h2>
-          <p className="text-foreground font-body text-base font-medium leading-relaxed mb-10 max-w-4xl">
-            Soho Apparel Group is proud to be one of the top three apparel suppliers to major U.S. retailers, including Ross, TJ Maxx, Burlington, Marshalls, and DD's Discounts. Our commitment to quality, timely delivery, and understanding consumer trends has made us a trusted partner for these renowned chains. Additionally, we are a major supplier for the prominent U.S. e-commerce platform Fashion Nova, where our sportswear lines are among the most popular and widely distributed.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6">
-            <img src="https://static.wixstatic.com/media/11062b_79510cda9b964ee397a8e9ca249455c9~mv2.jpg/v1/fill/w_524,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_79510cda9b964ee397a8e9ca249455c9~mv2.jpg" alt="Retail store" className="w-full h-auto object-cover" />
-            <img src="https://static.wixstatic.com/media/11062b_8ce3b16ee2c2452a83dc9793a0e80056~mv2.jpg/v1/fill/w_524,h_350,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/11062b_8ce3b16ee2c2452a83dc9793a0e80056~mv2.jpg" alt="Warehouse operations" className="w-full h-auto object-cover" />
+          <div className="space-y-16">
+            {productCategories.map((category, catIndex) => (
+              <Reveal key={category.name} delay={catIndex * 100}>
+                <div>
+                  {/* Category label on top */}
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-10 h-10 bg-navy flex items-center justify-center flex-shrink-0">
+                      <span className="font-body text-sm font-bold text-white">
+                        {String(catIndex + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-2xl md:text-3xl font-bold tracking-wide text-foreground">
+                      {category.name}
+                    </h3>
+                  </div>
+
+                  {/* Description */}
+                  <div className="space-y-1 mb-6 pl-14">
+                    <p className="font-body text-[15px] text-foreground/80 leading-[1.7]">
+                      <span className="font-semibold text-foreground">Structure:</span>{" "}
+                      {category.structure}
+                    </p>
+                    <p className="font-body text-[15px] text-foreground/80 leading-[1.7]">
+                      <span className="font-semibold text-foreground">Material:</span>{" "}
+                      {category.material}
+                    </p>
+                  </div>
+
+                  {/* Product images */}
+                  <div className="flex flex-wrap justify-center gap-4">
+                    {category.images.map((img, i) => (
+                      <Reveal
+                        key={i}
+                        direction={i % 2 === 0 ? "left" : "right"}
+                        delay={i * 120}
+                      >
+                        <img
+                          src={img}
+                          alt={`${category.name} ${i + 1}`}
+                          className="h-[260px] md:h-[300px] w-auto object-cover transition-transform duration-500 hover:scale-105"
+                          loading="lazy"
+                        />
+                      </Reveal>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
-      </Reveal>
+      </section>
 
-      {/* Warehouse Section */}
-      <Reveal direction="right">
-        <div className="mb-20">
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">Warehouse</h2>
-          <p className="text-foreground font-body text-base font-medium leading-relaxed max-w-4xl">
-            To support our large-scale operations, Soho Apparel Group manages a state-of-the-art 300,000-square-foot warehouse, equipped to handle high-volume inventory with efficiency and precision. This facility allows us to maintain excellent logistics and ensures that our products reach our retail partners and customers quickly and reliably.
-          </p>
-        </div>
-      </Reveal>
-
-      {/* Commitment Section */}
-      <Reveal>
-        <div>
-          <h2 className="font-display text-4xl md:text-5xl tracking-wide text-foreground mb-6">Commitment</h2>
-          <p className="text-foreground font-body text-base font-medium leading-relaxed max-w-4xl">
-            With a commitment to innovation, customer satisfaction, and excellence in every aspect of our business, Soho Apparel Group continues to drive the future of fashion. Whether it's through our cutting-edge designs or our seamless supply chain, we strive to set the standard in the global apparel market.
-          </p>
-        </div>
-      </Reveal>
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <Reveal>
+          <div className="text-center">
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-wide text-foreground mb-5">
+              Ready to Start Production?
+            </h2>
+            <p className="font-body text-[17px] text-foreground/80 leading-[1.8] max-w-xl mx-auto mb-8">
+              Contact us to discuss your sourcing needs and let us help you find
+              the right manufacturing solution in Vietnam.
+            </p>
+            <a
+              href="/contact"
+              className="inline-block bg-navy text-white font-body text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-navy-light transition-colors duration-300"
+            >
+              Get In Touch
+            </a>
+          </div>
+        </Reveal>
+      </section>
     </div>
   );
 };

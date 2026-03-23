@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import bgVideo from "@/assets/background_new.mp4";
+import logoImg from "@/assets/logo.jpg";
 
 const navItems = [
   { label: "ABOUT", to: "/about" },
   { label: "CAPABILITIES", to: "/capabilities" },
-  { label: "BRANDS", to: "/brands" },
+  // { label: "BRANDS", to: "/brands" },
   { label: "GALLERY", to: "/gallery" },
   { label: "CAREERS", to: "/careers" },
   { label: "CONTACT", to: "/contact" },
@@ -35,7 +36,14 @@ const Index = () => {
       {/* Gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/50" />
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6 pb-24">
+        <img
+          src={logoImg}
+          alt="Central Apparel logo"
+          className={`w-24 h-24 md:w-32 md:h-32 rounded-full object-cover mb-8 shadow-lg transition-all duration-1000 ease-out ${
+            loaded ? "opacity-100 scale-100" : "opacity-0 scale-90"
+          }`}
+        />
         <h1
           className={`text-5xl md:text-7xl lg:text-[86px] font-light tracking-[0.02em] text-primary-foreground mb-8 transition-all duration-1000 ease-out ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
@@ -46,7 +54,7 @@ const Index = () => {
             textShadow: "0px 4px 5px rgba(0, 0, 0, 0.4)",
           }}
         >
-          SOHO APPAREL GROUP
+          CENTRAL APPAREL
         </h1>
 
         <nav className="flex flex-wrap justify-center gap-6 md:gap-10">

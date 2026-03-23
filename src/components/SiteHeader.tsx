@@ -1,9 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
+import logoImg from "@/assets/logo.jpg";
 
 const navItems = [
   { label: "ABOUT", to: "/about" },
   { label: "CAPABILITIES", to: "/capabilities" },
-  { label: "BRANDS", to: "/brands" },
+  // { label: "BRANDS", to: "/brands" },
   { label: "GALLERY", to: "/gallery" },
   { label: "CAREERS", to: "/careers" },
   { label: "CONTACT", to: "/contact" },
@@ -14,22 +15,20 @@ const SiteHeader = () => {
 
   return (
     <header className="bg-background border-b border-border">
-      <div className="flex items-center justify-between px-8 md:px-12 py-5">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-            <span className="text-primary-foreground font-display text-lg font-semibold">S</span>
-          </div>
+      <div className="flex items-center px-8 md:px-12 py-5">
+        <Link to="/" className="flex items-center gap-3 shrink-0 mr-auto">
+          <img src={logoImg} alt="Central Apparel logo" className="w-10 h-10 rounded-full object-cover" />
           <span className="hidden md:block text-[10px] tracking-[0.2em] uppercase text-foreground font-body font-medium">
-            SOHOAPPAREL
+            CENTRAL APPAREL
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navItems.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className={`nav-link text-foreground ${location.pathname === item.to ? "nav-link-active" : ""}`}
+              className={`text-sm tracking-[0.2em] uppercase font-body font-medium text-foreground transition-opacity duration-300 hover:opacity-60 ${location.pathname === item.to ? "underline underline-offset-4" : ""}`}
             >
               {item.label}
             </Link>
