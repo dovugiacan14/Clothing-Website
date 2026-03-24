@@ -87,93 +87,54 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-        <Reveal>
-          <div className="max-w-lg mx-auto">
-            <h3 className="font-display text-2xl md:text-3xl font-bold tracking-wide text-foreground mb-6 text-center">
-              Send Us a Message
-            </h3>
-            <form
-              className="space-y-4"
-              onSubmit={(e) => e.preventDefault()}
-            >
-              <div>
-                <label className="block text-xs tracking-[0.15em] uppercase text-foreground/50 font-body mb-2">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  className="w-full border border-border bg-background px-4 py-3 font-body text-[15px] text-foreground focus:outline-none focus:border-navy/40 transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs tracking-[0.15em] uppercase text-foreground/50 font-body mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  className="w-full border border-border bg-background px-4 py-3 font-body text-[15px] text-foreground focus:outline-none focus:border-navy/40 transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs tracking-[0.15em] uppercase text-foreground/50 font-body mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className="w-full border border-border bg-background px-4 py-3 font-body text-[15px] text-foreground focus:outline-none focus:border-navy/40 transition-colors resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-navy text-white py-4 text-xs tracking-[0.25em] uppercase font-body font-semibold hover:bg-navy-light transition-colors"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </Reveal>
-      </section>
-
       {/* Office Locations */}
-      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-        <Reveal>
-          <div className="mb-10">
-            <p className="font-body text-xs tracking-[0.3em] uppercase text-foreground/50 mb-4">
-              Our Offices
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-foreground">
-              Office Locations
-            </h2>
-          </div>
-        </Reveal>
+      <section className="bg-navy/[0.03]">
+        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+          <Reveal>
+            <div className="mb-10">
+              <p className="font-body text-xs tracking-[0.3em] uppercase text-navy/50 mb-4">
+                Our Offices
+              </p>
+              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-foreground">
+                Office Locations
+              </h2>
+              <div className="w-16 h-[2px] bg-navy mt-6" />
+            </div>
+          </Reveal>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {offices.map((office, i) => (
-            <Reveal key={office.title} delay={i * 150}>
-              <div className="border-l-[3px] border-navy/25 pl-6 py-1">
-                <h3 className="font-body text-[15px] font-bold text-foreground mb-3 leading-tight">
-                  {office.title}
-                </h3>
-                <p className="font-body text-[15px] text-foreground/70 leading-[1.7] mb-3">
-                  {office.address}
-                </p>
-                <p className="font-body text-[14px] text-foreground/60 leading-[1.7]">
-                  Contact: {office.contact}
-                </p>
-                <p className="font-body text-[14px] text-foreground/60 leading-[1.7]">
-                  Phone:{" "}
-                  <a
-                    href={`tel:${office.phone.replace(/[\s-]/g, "")}`}
-                    className="text-navy-light hover:text-navy transition-colors"
-                  >
-                    {office.phone}
-                  </a>
-                </p>
-              </div>
-            </Reveal>
-          ))}
+          <div className="grid md:grid-cols-3 gap-8">
+            {offices.map((office, i) => (
+              <Reveal key={office.title} delay={i * 150}>
+                <div className="bg-white border border-border/50 p-8 hover:shadow-lg transition-shadow duration-300">
+                  <div className="w-10 h-10 bg-navy/5 flex items-center justify-center mb-5">
+                    <span className="font-display text-lg font-bold text-navy">
+                      0{i + 1}
+                    </span>
+                  </div>
+                  <h3 className="font-body text-[15px] font-bold text-foreground mb-4 leading-tight">
+                    {office.title}
+                  </h3>
+                  <p className="font-body text-[15px] text-foreground/70 leading-[1.7] mb-4">
+                    {office.address}
+                  </p>
+                  <div className="border-t border-border/50 pt-4 space-y-1">
+                    <p className="font-body text-[14px] text-foreground/60 leading-[1.7]">
+                      Contact: {office.contact}
+                    </p>
+                    <p className="font-body text-[14px] text-foreground/60 leading-[1.7]">
+                      Phone:{" "}
+                      <a
+                        href={`tel:${office.phone.replace(/[\s-]/g, "")}`}
+                        className="text-navy-light hover:text-navy transition-colors font-semibold"
+                      >
+                        {office.phone}
+                      </a>
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </div>

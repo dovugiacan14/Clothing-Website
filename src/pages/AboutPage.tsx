@@ -74,7 +74,7 @@ const AboutPage = () => {
             <p className="font-body text-xs tracking-[0.3em] uppercase text-white/70 mb-4">
               Who We Are
             </p>
-            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-wide text-white leading-[1.1] mb-6 max-w-2xl">
+            <h1 className="font-display text-5xl md:text-7xl font-bold tracking-wide text-white leading-[1.1] mb-6 whitespace-nowrap">
               About Central Apparel
             </h1>
             <p className="font-body text-base md:text-lg text-white/85 leading-relaxed max-w-xl">
