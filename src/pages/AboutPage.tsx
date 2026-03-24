@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Reveal } from "@/hooks/useScrollReveal";
 import aboutHero from "@/assets/about.png";
 import aboutPhoto from "@/assets/about/ntt_1.png";
@@ -326,12 +327,12 @@ const AboutPage = () => {
               Let us help you source and produce high-quality apparel from
               Vietnam. Contact us to discuss your next project.
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-block bg-navy text-white font-body text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-navy-light transition-colors duration-300"
             >
               Get In Touch
-            </a>
+            </Link>
           </div>
         </Reveal>
       </section>

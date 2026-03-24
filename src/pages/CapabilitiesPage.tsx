@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Reveal } from "@/hooks/useScrollReveal";
 import capabilitiesHero from "@/assets/about.png";
 
@@ -339,12 +340,12 @@ const CapabilitiesPage = () => {
               Contact us to discuss your sourcing needs and let us help you find
               the right manufacturing solution in Vietnam.
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-block bg-navy text-white font-body text-xs tracking-[0.2em] uppercase px-10 py-4 hover:bg-navy-light transition-colors duration-300"
             >
               Get In Touch
-            </a>
+            </Link>
           </div>
         </Reveal>
       </section>
