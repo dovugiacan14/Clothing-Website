@@ -8,19 +8,16 @@ import dj3 from "@/assets/capabilities/product_categories/down_jacket/dj_3.jpg";
 
 // Padded & Quilted Jackets images
 import pqj1 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_1.jpg";
-import pqj2 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_2.jpg";
 import pqj3 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_3.jpg";
 import pqj4 from "@/assets/capabilities/product_categories/padded_quilted_jackets/pqj_4.jpg";
 
 // Outerwear images
 import ow1 from "@/assets/capabilities/product_categories/outerwear/outerwear_1.jpg";
-import ow2 from "@/assets/capabilities/product_categories/outerwear/outer_wear_2.jpg";
 import ow3 from "@/assets/capabilities/product_categories/outerwear/outerwear_3.jpg";
 import ow4 from "@/assets/capabilities/product_categories/outerwear/outerwear_4.jpg";
 import ow5 from "@/assets/capabilities/product_categories/outerwear/outerwear_5.jpg";
 
 // Workwear images
-import ww1 from "@/assets/capabilities/product_categories/workwear_garments/workwear.jpg";
 import ww2 from "@/assets/capabilities/product_categories/workwear_garments/workwear_2.jpg";
 import ww3 from "@/assets/capabilities/product_categories/workwear_garments/workwear_3.jpg";
 import ww4 from "@/assets/capabilities/product_categories/workwear_garments/workwear_4.jpg";
@@ -40,19 +37,19 @@ const productCategories = [
     name: "Padded & Quilted Jackets",
     structure: "Quilted construction with lightweight synthetic padding and seam sealing",
     material: "Nylon / polyester shell fabrics available",
-    images: [pqj1, pqj2, pqj3, pqj4],
+    images: [pqj1, pqj3, pqj4],
   },
   {
     name: "Outerwear",
     structure: "Water-resistant shell jackets with functional construction",
     material: "Polyester / Nylon fabrics with breathable coating or membrane",
-    images: [ow1, ow2, ow3, ow4, ow5],
+    images: [ow1, ow3, ow4, ow5],
   },
   {
     name: "Workwear Garments",
     structure: "Durable construction designed for industrial and professional use",
     material: "Heavy-duty cotton, polyester blends with reinforced stitching",
-    images: [ww1, ww2, ww3, ww4],
+    images: [ww2, ww3, ww4],
   },
   {
     name: "Medical Clothing",

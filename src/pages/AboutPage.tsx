@@ -92,7 +92,7 @@ const AboutPage = () => {
             {stats.map((stat, i) => (
               <Reveal key={stat.label} delay={i * 100}>
                 <div className="py-6 md:py-8 text-center px-4">
-                  <p className="font-display text-4xl md:text-5xl font-bold text-white mb-2">
+                  <p className="text-4xl md:text-5xl font-bold text-white mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
                     {stat.value}
                   </p>
                   <p className="font-body text-xs tracking-[0.15em] uppercase text-white/60">
