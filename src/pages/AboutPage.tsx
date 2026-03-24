@@ -78,9 +78,8 @@ const AboutPage = () => {
               About Central Apparel
             </h1>
             <p className="font-body text-base md:text-lg text-white/85 leading-relaxed max-w-xl">
-              A Vietnam-based apparel sourcing and trading company dedicated to
-              connecting international buyers with reliable garment
-              manufacturers.
+              A Vietnam-based apparel sourcing and trading company dedicated to connecting
+              international buyers with reliable garment manufacturers.
             </p>
           </Reveal>
         </div>
