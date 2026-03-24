@@ -87,49 +87,6 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Office Locations */}
-      <section className="bg-navy">
-        <div className="max-w-6xl mx-auto px-6 py-12 md:py-16">
-          <Reveal>
-            <div className="mb-10">
-              <p className="font-body text-xs tracking-[0.3em] uppercase text-white/40 mb-4">
-                Our Offices
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-white">
-                Office Locations
-              </h2>
-            </div>
-          </Reveal>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {offices.map((office, i) => (
-              <Reveal key={office.title} delay={i * 150}>
-                <div className="border-l-[3px] border-white/20 pl-6 py-1">
-                  <h3 className="font-body text-[15px] font-bold text-white mb-3 leading-tight">
-                    {office.title}
-                  </h3>
-                  <p className="font-body text-[15px] text-white/70 leading-[1.7] mb-3">
-                    {office.address}
-                  </p>
-                  <p className="font-body text-[14px] text-white/50 leading-[1.7]">
-                    Contact: {office.contact}
-                  </p>
-                  <p className="font-body text-[14px] text-white/50 leading-[1.7]">
-                    Phone:{" "}
-                    <a
-                      href={`tel:${office.phone.replace(/[\s-]/g, "")}`}
-                      className="text-white/70 hover:text-white transition-colors"
-                    >
-                      {office.phone}
-                    </a>
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact Form */}
       <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
         <Reveal>
@@ -177,6 +134,47 @@ const ContactPage = () => {
             </form>
           </div>
         </Reveal>
+      </section>
+
+      {/* Office Locations */}
+      <section className="max-w-6xl mx-auto px-6 py-12 md:py-16">
+        <Reveal>
+          <div className="mb-10">
+            <p className="font-body text-xs tracking-[0.3em] uppercase text-foreground/50 mb-4">
+              Our Offices
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-wide text-foreground">
+              Office Locations
+            </h2>
+          </div>
+        </Reveal>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {offices.map((office, i) => (
+            <Reveal key={office.title} delay={i * 150}>
+              <div className="border-l-[3px] border-navy/25 pl-6 py-1">
+                <h3 className="font-body text-[15px] font-bold text-foreground mb-3 leading-tight">
+                  {office.title}
+                </h3>
+                <p className="font-body text-[15px] text-foreground/70 leading-[1.7] mb-3">
+                  {office.address}
+                </p>
+                <p className="font-body text-[14px] text-foreground/60 leading-[1.7]">
+                  Contact: {office.contact}
+                </p>
+                <p className="font-body text-[14px] text-foreground/60 leading-[1.7]">
+                  Phone:{" "}
+                  <a
+                    href={`tel:${office.phone.replace(/[\s-]/g, "")}`}
+                    className="text-navy-light hover:text-navy transition-colors"
+                  >
+                    {office.phone}
+                  </a>
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
     </div>
   );
