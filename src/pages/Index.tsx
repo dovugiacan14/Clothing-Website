@@ -36,7 +36,7 @@ const Index = () => {
       {/* Gradient overlay for depth */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/30 to-primary/50" />
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6 pb-24">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6 pb-8">
         <img
           src={logoImg}
           alt="Central Apparel logo"
@@ -45,7 +45,7 @@ const Index = () => {
           }`}
         />
         <h1
-          className={`text-5xl md:text-7xl lg:text-[86px] font-light tracking-[0.02em] text-primary-foreground mb-8 transition-all duration-1000 ease-out ${
+          className={`text-5xl md:text-7xl lg:text-[86px] font-light tracking-[0.02em] text-primary-foreground mb-2 transition-all duration-1000 ease-out ${
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
           }`}
           style={{
@@ -56,6 +56,19 @@ const Index = () => {
         >
           CENTRAL APPAREL
         </h1>
+
+        <p
+          className={`text-sm md:text-base tracking-[0.15em] text-primary-foreground/80 mb-8 transition-all duration-1000 delay-200 ease-out ${
+            loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{
+            fontFamily: "'Montserrat', sans-serif",
+            fontWeight: 300,
+            textShadow: "0px 2px 4px rgba(0, 0, 0, 0.3)",
+          }}
+        >
+          Built for Quality. Made for Trust.
+        </p>
 
         <nav className="flex flex-wrap justify-center gap-6 md:gap-10">
           {navItems.map((item, i) => (

@@ -62,10 +62,8 @@ const productCategories = [
 
 const coreServices = [
   { title: "Apparel Sourcing", description: "Connecting buyers with vetted Vietnamese garment manufacturers" },
-  { title: "CMPT Production", description: "Cut, Make, Pack & Trim services with material coordination" },
+  { title: "CMT / CMPT / FOB Production", description: "Flexible manufacturing solutions — from cut, make & trim to full package production with material coordination" },
   { title: "Product Development & Sampling", description: "From concept to production-ready samples" },
-  { title: "FOB Manufacturing", description: "Full package production from fabric to finished goods" },
-  { title: "CMT Production", description: "Cut, Make & Trim services for buyer-supplied materials" },
   { title: "Production Follow-up & Quality Control", description: "On-site inspections and quality assurance at every stage" },
 ];
 
@@ -158,7 +156,7 @@ const CapabilitiesPage = () => {
             </div>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {coreServices.map((service, i) => (
               <Reveal key={service.title} delay={i * 100}>
                 <div className="bg-white border border-border/50 p-8 hover:shadow-lg transition-shadow duration-300 group h-full">

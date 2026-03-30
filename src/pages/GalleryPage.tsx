@@ -1,14 +1,16 @@
 import { Reveal } from "@/hooks/useScrollReveal";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
+import gl1 from "@/assets/gallery/gl_1.jpg";
+import gl2 from "@/assets/gallery/gl_2.jpg";
+import gl3 from "@/assets/gallery/gl_3.jpg";
+import gl4 from "@/assets/gallery/gl_4.jpg";
+import gl5 from "@/assets/gallery/gl_5.jpg";
 
 const images = [
-  { src: gallery1, alt: "Fashion collection showcase" },
-  { src: gallery2, alt: "Craftsmanship detail" },
-  { src: gallery3, alt: "Fashion lookbook" },
-  { src: gallery4, alt: "Design workspace" },
+  { src: gl1, alt: "Production facility overview" },
+  { src: gl2, alt: "Garment manufacturing process" },
+  { src: gl3, alt: "Quality control inspection" },
+  { src: gl4, alt: "Fabric and materials" },
+  { src: gl5, alt: "Finished products showcase" },
 ];
 
 const GalleryPage = () => {
@@ -29,22 +31,24 @@ const GalleryPage = () => {
         </Reveal>
       </section>
 
-      {/* Images Grid */}
-      <section className="max-w-5xl mx-auto px-6 pb-12 md:pb-16">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-          {images.map((img, i) => (
+      {/* Images Grid - 3 top, 2 bottom */}
+      <section className="max-w-6xl mx-auto px-6 pb-12 md:pb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+          {images.slice(0, 3).map((img, i) => (
             <Reveal key={i} delay={i * 120}>
-              <div
-                className={`overflow-hidden group ${
-                  i === 0 ? "col-span-2 row-span-2" : ""
-                }`}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  style={{ minHeight: i === 0 ? "100%" : "220px" }}
-                />
+              <div className="overflow-hidden group aspect-[4/3]">
+                <img src={img.src} alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <div className="grid grid-cols-2 gap-3 md:gap-4 mt-3 md:mt-4 md:px-[16.67%]">
+          {images.slice(3).map((img, i) => (
+            <Reveal key={i} delay={360 + i * 120}>
+              <div className="overflow-hidden group aspect-[4/3]">
+                <img src={img.src} alt={img.alt}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
               </div>
             </Reveal>
           ))}

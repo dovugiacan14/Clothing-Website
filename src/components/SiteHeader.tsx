@@ -18,9 +18,14 @@ const SiteHeader = () => {
       <div className="flex items-center px-8 md:px-12 py-5">
         <Link to="/" className="flex items-center gap-3 shrink-0 mr-auto">
           <img src={logoImg} alt="Central Apparel logo" className="w-10 h-10 rounded-full object-cover" />
-          <span className="hidden md:block text-[10px] tracking-[0.2em] uppercase text-foreground font-body font-medium">
-            CENTRAL APPAREL
-          </span>
+          <div className="hidden md:flex flex-col">
+            <span className="text-sm tracking-[0.2em] uppercase text-primary font-body font-semibold">
+              CENTRAL APPAREL
+            </span>
+            <span className="text-[8px] tracking-[0.12em] text-foreground font-body font-medium">
+              Built for Quality. Made for Trust.
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden md:flex items-center gap-10">
