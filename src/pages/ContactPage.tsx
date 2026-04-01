@@ -74,12 +74,12 @@ const ContactPage = () => {
                   Website
                 </p>
                 <a
-                  href="https://www.centralapparel.co"
+                  href="https://centralapparel.com.vn/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-body text-[17px] font-semibold text-navy underline underline-offset-4 hover:opacity-70 transition-opacity"
                 >
-                  www.centralapparel.co
+                  centralapparel.com.vn
                 </a>
               </div>
             </div>

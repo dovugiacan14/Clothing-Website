@@ -6,20 +6,22 @@ import partnerDacotex from "@/assets/about/Partners/dacotex_partner.png";
 import partnerDona from "@/assets/about/Partners/dona_partner.png";
 import partnerKingtex from "@/assets/about/Partners/kingtex_partner.png";
 import partnerPhuongdong from "@/assets/about/Partners/phuongdong_partner.png";
+import partnerQve from "@/assets/about/Partners/qve_partner.png";
+import partnerTainan from "@/assets/about/Partners/tainan_partner.png";
 
 import branchBuyer from "@/assets/about/Branches/buyer.png";
 import branchFirstIte from "@/assets/about/Branches/first _ite_buyer.png";
 import branchHead from "@/assets/about/Branches/head_buyer.png";
 import branchJott from "@/assets/about/Branches/jott_buyer.png";
-import branchQve from "@/assets/about/Branches/qve_buyer.png";
 import branchSoho from "@/assets/about/Branches/soho_buyer.png";
-import branchTainan from "@/assets/about/Branches/tainan_partner.png";
 
 const partnerLogos = [
   { src: partnerDacotex, alt: "Dacotex" },
   { src: partnerDona, alt: "Dona" },
   { src: partnerKingtex, alt: "Kingtex" },
   { src: partnerPhuongdong, alt: "Phuong Dong" },
+  { src: partnerQve, alt: "Q.V.E" },
+  { src: partnerTainan, alt: "Tainan" },
 ];
 
 const branchLogos = [
@@ -28,8 +30,6 @@ const branchLogos = [
   { src: branchHead, alt: "Head" },
   { src: branchBuyer, alt: "Buyer" },
   { src: branchFirstIte, alt: "First Ite" },
-  { src: branchQve, alt: "Q.V.E" },
-  { src: branchTainan, alt: "Tainan" },
 ];
 
 const stats = [
@@ -291,8 +291,20 @@ const AboutPage = () => {
               </h2>
               <div className="w-[2px] bg-navy shrink-0" />
               <div className="flex-1">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
-                  {partnerLogos.map((logo, i) => (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 mb-8 md:mb-10">
+                  {partnerLogos.slice(0, 3).map((logo, i) => (
+                    <div key={i} className="flex items-center justify-center py-4">
+                      <img
+                        src={logo.src}
+                        alt={logo.alt}
+                        className="h-20 md:h-28 w-auto max-w-[200px] object-contain hover:scale-105 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
+                  {partnerLogos.slice(3).map((logo, i) => (
                     <div key={i} className="flex items-center justify-center py-4">
                       <img
                         src={logo.src}
@@ -319,8 +331,8 @@ const AboutPage = () => {
               </h2>
               <div className="w-[2px] bg-navy shrink-0" />
               <div className="flex-1">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 mb-8 md:mb-10">
-                  {branchLogos.slice(0, 4).map((logo, i) => (
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 mb-8 md:mb-10">
+                  {branchLogos.slice(0, 3).map((logo, i) => (
                     <div key={i} className="flex items-center justify-center py-4">
                       <img
                         src={logo.src}
@@ -331,8 +343,8 @@ const AboutPage = () => {
                     </div>
                   ))}
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10 md:px-[12.5%]">
-                  {branchLogos.slice(4).map((logo, i) => (
+                <div className="grid grid-cols-2 gap-8 md:gap-10 md:px-[25%]">
+                  {branchLogos.slice(3).map((logo, i) => (
                     <div key={i} className="flex items-center justify-center py-4">
                       <img
                         src={logo.src}
