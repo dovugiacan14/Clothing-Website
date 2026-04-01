@@ -63,10 +63,10 @@ const ContactPage = () => {
                   Email
                 </p>
                 <a
-                  href="mailto:info@centralapparel.com"
+                  href="mailto:sales@centralapparel.com.vn"
                   className="font-body text-[17px] font-semibold text-navy underline underline-offset-4 hover:opacity-70 transition-opacity"
                 >
-                  info@centralapparel.com
+                  sales@centralapparel.com.vn
                 </a>
               </div>
               <div>

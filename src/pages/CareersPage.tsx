@@ -74,10 +74,10 @@ const CareersPage = () => {
               <p className="font-body text-[17px] text-foreground/85 leading-[1.8]">
                 Please send your resume to{" "}
                 <a
-                  href="mailto:info@centralapparel.com"
+                  href="mailto:sales@centralapparel.com.vn"
                   className="text-navy font-semibold underline underline-offset-4 hover:opacity-70 transition-opacity"
                 >
-                  info@centralapparel.com
+                  sales@centralapparel.com.vn
                 </a>{" "}
                 or mail your resume to our address.
               </p>

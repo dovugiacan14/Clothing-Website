@@ -13,7 +13,7 @@ const SiteFooter = () => {
               <strong className="text-primary-foreground/90">Phone / WhatsApp:</strong> (+84) 935-105-799 Hoàng Trần (Ray)
             </span>
             <span>
-              <strong className="text-primary-foreground/90">Email:</strong> info@centralapparel.com
+              <strong className="text-primary-foreground/90">Email:</strong> sales@centralapparel.com.vn
             </span>
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
