@@ -1,4 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import logoImg from "@/assets/logo.jpg";
 
 const navItems = [
@@ -77,7 +78,5 @@ const MobileMenu = () => {
     </div>
   );
 };
-
-import { useState } from "react";
 
 export default SiteHeader;
