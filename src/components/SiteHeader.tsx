@@ -15,7 +15,7 @@ const SiteHeader = () => {
   const location = useLocation();
 
   return (
-    <header className="bg-background border-b border-border">
+    <header className="bg-background border-b border-border relative">
       <div className="flex items-center px-8 md:px-12 py-5">
         <Link to="/" className="flex items-center gap-3 shrink-0 mr-auto">
           <img src={logoImg} alt="Central Apparel logo" className="w-10 h-10 rounded-full object-cover" />
